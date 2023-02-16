@@ -43,6 +43,7 @@ public class TestLeadController {
            test.startTest();
            LeadController.createLead(lead1);
         test.stopTest();
+        System.debug('Testing Pull request');
     }
 
 }
