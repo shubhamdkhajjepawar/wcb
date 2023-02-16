@@ -369,6 +369,6 @@ public class TestRenewalCSRTrigger {
         Test.setCurrentPage(pageRef);
         csrRenewalClientFormPDF cRCFP = new csrRenewalClientFormPDF();
         cRCFP.recordid=rcsrList.Id;
-        
+        System.debug('Testing Pull request');
     }
 }
