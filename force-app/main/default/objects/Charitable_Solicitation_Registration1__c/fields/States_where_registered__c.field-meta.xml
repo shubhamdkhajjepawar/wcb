@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>States_where_registered__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>16.   A list of all states where the organization</inlineHelpText>
+    <label>States where registered</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>a. Is currently registered and allowed to solicit funds</fullName>
+                <default>false</default>
+                <label>a. Is currently registered and allowed to solicit funds</label>
+            </value>
+            <value>
+                <fullName>b. Is registered, but its registration is suspended because the state has asked questions about the most recent registration renewal</fullName>
+                <default>false</default>
+                <label>b. Is registered, but its registration is suspended because the state has asked questions about the most recent registration renewal</label>
+            </value>
+            <value>
+                <fullName>c. Was registered, but is not registered now. Please explain why the organization is not registered now (e.g., withdrawal, suspension, failure to file renewal)</fullName>
+                <default>false</default>
+                <label>c. Was registered, but is not registered now. Please explain why the organization is not registered now (e.g., withdrawal, suspension, failure to file renewal)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

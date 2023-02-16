@@ -1,0 +1,226 @@
+<apex:page controller="listOfRenewalRecordCls" lightningStylesheets="true" doctype="html-5.0" sidebar="false" readonly="true" cache="false">
+    
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin " />
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+        <style type="text/css">   
+            .italicText 
+            { 
+            font-size:1.5rem;
+            font-family:Raleway, sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            }  
+            h1 {
+            text-align: center;
+            color: #3495b2;
+            margin-bottom: 0;
+            display: block;
+            font-size: 1.5rem;
+            }
+            .italicText1 
+            { 
+            font-size:10pt;
+            font-family:Raleway, sans-serif;
+            color: Nero
+            }
+            body{
+            font-family: 'Raleway', sans-serif;
+            color:#000;
+            background: white !important;
+            }
+            p{
+            font-family: 'Raleway', sans-serif;
+            }
+            a {
+            padding: 11px 0;
+            display: block;
+            width: 134px;
+            text-align: center;
+            float: right;
+            background: #3495b2 !important;
+            text-align: center !important;
+            font-size: 16px !important;
+            font-weight: 500;
+            color:#fff !important;
+            text-decoration:none !important;
+            }
+            a:hover {
+            background: #b09a51 !important;
+            color:#fff !important;
+            text-decoration:none !important;
+            }
+            form {
+            width: 100%;
+            margin: 0 auto;
+            margin-top: 50px;
+            }
+            th {
+            background: none !important;
+            }
+            tr.headerRow{
+            background-color: #002843!important;
+            }
+            th.headerRow > div {
+            color: #fff !important;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 12px 20px;
+            }
+            td{
+            font-size: 16px !important;
+            padding: 12px 20px !important;
+            }
+            tbody#j_id0\:j_id2\:j_id3\:j_id7\:tb > tr:nth-child(odd) {
+            background: #f2f2f2;
+            } 
+            td.dataCell.italicText1 {
+            border-right: 1px solid #ccc;
+            font-weight: 500 !important;
+            }
+            html .brandQuaternaryBgr {
+            background: #f5f7fa!important;
+            }
+            body.hasMotif.homeTab.sfdcBody.brandQuaternaryBgr > a {
+            display: none;
+            }
+        </style>
+        
+    </head>
+    <apex:form >
+        <!--apex:outputfield value="{!r.CreatedDate}"/-->
+        <!--apex:pageBlock >
+            
+            <h1 style="margin-bottom:0;text-align:center;"><apex:outputText styleClass="italicText" value="List Of Renewal CSR Records "></apex:outputText></h1> <br/><br/>
+            
+            <apex:pageBlockTable value="{!Renewals}" var="r">
+                <apex:column Headervalue="Id" styleClass="italicText1">
+                    <apex:outputfield value="{!r.Id}"/>
+                </apex:column>
+                <apex:column headervalue="Date" styleClass="italicText1">
+                    <apex:outputText value="{0, date, yyyy}">
+                        <apex:param value="{!r.CreatedDate}"/>
+                    </apex:outputText>
+                    
+                </apex:column>
+                <apex:column >
+                    <apex:commandLink value="View PDF" action="{!view}" target="_blank">
+                        <apex:param name="csr" value="{!r.id}" assignTo="{!csrid}"/>
+                    </apex:commandLink>
+                    
+                </apex:column>
+            </apex:pageBlockTable>
+	           
+        </apex:pageBlock-->
+        
+        <apex:pageblock >
+            <h1 style="margin-bottom:0;text-align:center;"><apex:outputText styleClass="italicText" value="List of Renewal CSR Records "></apex:outputText></h1> <br/><br/>
+            <apex:pageblocksection columns="1">
+                <apex:facet name="body">
+                    <apex:outputpanel layout="none">
+                        <apex:pageblocktable id="pbRenewals" value="{!Renewals}" var="r">
+                            <!--apex:column styleClass="italicText1">
+                                <apex:facet name="header">Id</apex:facet> 
+                                 <apex:outputfield value="{!r.Id}"/>
+                            </apex:column-->
+                           <apex:column headervalue="Date" styleClass="italicText1">
+                    <apex:outputText value="{0, date, yyyy}">
+                        <apex:param value="{!r.CreatedDate}"/>
+                    </apex:outputText>
+                    
+                </apex:column>
+                <apex:column >
+                    <apex:commandLink value="View PDF" action="{!view}" target="_blank">
+                        <apex:param name="csr" value="{!r.id}" assignTo="{!csrid}"/>
+                    </apex:commandLink>
+                    
+                </apex:column>
+                        </apex:pageblocktable>
+                         <apex:outputpanel layout="block" styleclass="listViewport">
+ 
+<div class="bottomNav">
+ 
+<div class="paginator">
+                                        <apex:panelgrid id="gridPaging" columns="3" width="100%" columnclasses="left, center, right">
+                                            <apex:panelgroup >
+                                                <span class="selectorTarget">
+                                                    <strong>{!LNumber}-{!UNumber} of {!RecordCount}</strong>
+                                                </span>
+                                                <span>  </span>
+                                                <span>
+                                                    <strong>Total {!RecordCount} records</strong>
+                                                </span>
+                                                <span>  </span>
+                                                <apex:actionstatus id="statusPaging">
+                                                    <apex:facet name="start">
+                                                        <img src="/img/loading.gif" height="14px" width="14px"/>
+                                                    </apex:facet>
+                                                    <apex:facet name="stop">
+                                                        <img src="/img/s.gif" height="14px" width="14px"/>
+                                                    </apex:facet>
+                                                </apex:actionstatus>                                           
+                                            </apex:panelgroup>
+                                            <apex:panelgroup >
+                                                <span class="prevNextLinks">
+                                                    <span class="prevNext">
+                                                        <apex:commandlink id="linkMoveFirst" immediate="true" status="statusPaging" action="{!First}" rerender="gridPaging, pbRenewals" rendered="{!allowMovePrev}">
+                                                            <img src="/s.gif" title="First" alt="First" class="first"/>
+                                                        </apex:commandlink>
+                                      
+                                                        <apex:outputpanel layout="none" rendered="{!NOT(allowMovePrev)}">
+                                                            <apex:image url="/s.gif" title="First" alt="First" styleclass="firstoff"></apex:image>
+                                                        </apex:outputpanel>
+                                                    </span>
+                                                      
+                                                    <span class="prevNext">
+                                                        <apex:commandlink id="linkMovePrev" immediate="true" title="Previous" status="statusPaging" action="{!Prev}" rerender="gridPaging, pbRenewals" rendered="{!allowMovePrev}">
+                                                            <img src="/s.gif" title="Previous" alt="Previous" class="prev"/>
+                                                            <span>Previous</span>
+                                                        </apex:commandlink>
+                                                        <apex:outputpanel layout="none" rendered="{!NOT(allowMovePrev)}">
+                                                            <apex:image url="/s.gif" title="Previous" alt="Previous" styleclass="prevoff"></apex:image>
+                                                            <span>Previous</span>
+                                                        </apex:outputpanel>
+                                                    </span>
+                              
+                                                    <span class="prevNext">
+                                                        <apex:commandlink id="linkMoveNext" immediate="true" title="Next" status="statusPaging" action="{!Next}" rerender="gridPaging, pbRenewals" rendered="{!allowMoveNext}">
+                                                            <span>Next</span>
+                                                            <img src="/s.gif" title="Next" alt="Next" class="next"/>
+                                                        </apex:commandlink>
+                              
+                                                        <apex:outputpanel layout="none" rendered="{!NOT(allowMoveNext)}">
+                                                            <span>Next</span>
+                                                            <apex:image url="/s.gif" title="Next" alt="Next" styleclass="nextoff"></apex:image>
+                                                        </apex:outputpanel>
+                                                    </span>
+                              
+                                                    <span class="prevNext">
+                                                        <apex:commandlink id="linkMoveLast" immediate="true" status="statusPaging" action="{!Last}" rerender="gridPaging, pbRenewals" rendered="{!allowMoveNext}">
+                                                            <img src="/s.gif" title="Last" alt="Last" class="last"/>
+                                                        </apex:commandlink>
+                              
+                                                        <apex:outputpanel layout="none" rendered="{!NOT(allowMoveNext)}">
+                                                            <apex:image url="/s.gif" title="Last" alt="Last" styleclass="lastoff"></apex:image>
+                                                        </apex:outputpanel>
+                                                    </span>
+                                                </span>
+                                            </apex:panelgroup>
+                                            <apex:panelgroup >
+                                                <span class="selectorTarget">
+                                                    <strong> Page {!PageNumber} of {!PageCount}</strong>
+                                                </span>
+                                            </apex:panelgroup>
+                                        </apex:panelgrid> 
+                                     </div>
+ 
+                                </div>
+ 
+                            </apex:outputpanel>
+                    </apex:outputpanel>
+                </apex:facet>
+            </apex:pageblocksection>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

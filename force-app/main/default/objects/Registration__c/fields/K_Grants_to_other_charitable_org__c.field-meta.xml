@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>K_Grants_to_other_charitable_org__c</fullName>
+    <externalId>false</externalId>
+    <formula>Program__r.Lines_1_2_3_Grants_and_similar_amt__c</formula>
+    <inlineHelpText>K) Grants to other charitable organizations:</inlineHelpText>
+    <label>K)Grants to other charitable org</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

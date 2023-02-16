@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X18_Net_assets_fund_balances__c</fullName>
+    <externalId>false</externalId>
+    <formula>X15_Excess_Deficit_for_the_year__c + X16_Net_assets_fund_balances_at_beginn__c + X17_Other_changes_in_net_assets_or_fund__c</formula>
+    <label>18. Net assets / fund balances:</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="File Share" icon-name="custom:custom63">
+        <div class="slds-m-around_medium">
+            <template if:true={conv.data}>
+                <lightning-datatable
+                    key-field="Id"
+                    data={conv.data}
+                    columns={columns}
+                    onsave={handleSave}
+                    draft-values={draftValues}>
+                </lightning-datatable>
+            </template>
+            <template if:true={conv.error}>
+                <!-- handle Apex error -->
+            </template>
+        </div>
+    </lightning-card>
+</template>

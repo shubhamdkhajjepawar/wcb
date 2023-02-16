@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Maryland__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>a.  Maryland:  Does the institution solicit anyone in Maryland other than a student, former student, parent of a student or former student, present or former board member, or employee</inlineHelpText>
+    <label>Maryland</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

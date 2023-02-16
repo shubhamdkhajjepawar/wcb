@@ -1,0 +1,872 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Accreditation</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Accreditation</shortDescription>
+        <value>1.	Accreditation:  Attach a copy of the institution’s certificate of accreditation, or provide a link to the accreditation on the accrediting agency’s website.</value>
+    </labels>
+    <labels>
+        <fullName>Articles_of_Incorporation</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Articles of Incorporation</shortDescription>
+        <value>8.  Articles of Incorporation: A file-stamped copy of the organization’s original articles of incorporation and all amendments and/or restatements filed subsequently. Please ensure that the Certificate of Incorporation issued by the state is included.</value>
+    </labels>
+    <labels>
+        <fullName>Audited_financial_statements</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Audited financial statements</shortDescription>
+        <value>4. Audited financial statements: A copy of the audit by an independent CPA that conforms with generally accepted accounting principles (also known as a GAAP audit) for the most recently closed fiscal year if available.</value>
+    </labels>
+    <labels>
+        <fullName>BOARD_AND_MANAGEMENT_INFORMATION</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>BOARD AND MANAGEMENT INFORMATION</shortDescription>
+        <value>C.	BOARD AND MANAGEMENT INFORMATION</value>
+    </labels>
+    <labels>
+        <fullName>Banks</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Banks</shortDescription>
+        <value>9. Banks</value>
+    </labels>
+    <labels>
+        <fullName>Board_of_Directors</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Board of Directors</shortDescription>
+        <value>11.  Board of Directors</value>
+    </labels>
+    <labels>
+        <fullName>Bylaws</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Bylaws</shortDescription>
+        <value>9. Bylaws: The approved bylaws of the organization, as amended to date, showing how the charity will be expected to operate.</value>
+    </labels>
+    <labels>
+        <fullName>CORPORATE_INFORMATION</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CORPORATE INFORMATION</shortDescription>
+        <value>A.	CORPORATE INFORMATION</value>
+    </labels>
+    <labels>
+        <fullName>Charity_Contact_Information</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Charity Contact Information</shortDescription>
+        <value>4.  Charity Contact Information: If the organization uses a P.O. Box as its primary address, it must also provide a street address</value>
+    </labels>
+    <labels>
+        <fullName>Community_Url</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Community Url</shortDescription>
+        <value>https://websterchamberlainbean--cube84dev.builder.salesforce-communities.com/</value>
+    </labels>
+    <labels>
+        <fullName>Complience</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Compliance</shortDescription>
+        <value>21. Compliance: If yes to any of the below, please provide a brief explanation and copies of any related documents.  Has the organization—</value>
+    </labels>
+    <labels>
+        <fullName>Complience_File_Upload</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Compliance File Upload</shortDescription>
+        <value>Compliance file upload. Max 3, Can we put instructions that if they need to upload more than 3 docs, then to combine them into a single document?</value>
+    </labels>
+    <labels>
+        <fullName>Contracts</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Contracts</shortDescription>
+        <value>Contracts: Many states require certain content to be included in contracts between charities and professional fundraising businesses, and that contracts be filed with the state before they become effective.  When the organization is preparing to enter into a contract for professional fundraising services (as defined above),please send the contract to us before it is signed so we can ensure that it includes all required content.  This avoids a state rejecting the contract and delaying the start of work by the fundraiser</value>
+    </labels>
+    <labels>
+        <fullName>Directions</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Directions</shortDescription>
+        <value>Directions: Please answer all items. If an item does not apply, please answer “N/A.”</value>
+    </labels>
+    <labels>
+        <fullName>EDUCATIONAL_INSTITUTIONS_AND_AFFILIATES</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EDUCATIONAL INSTITUTIONS AND AFFILIATES</shortDescription>
+        <value>E.	EDUCATIONAL INSTITUTIONS AND AFFILIATES</value>
+    </labels>
+    <labels>
+        <fullName>FUNDRAISING_INFORMATION</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FUNDRAISING INFORMATION</shortDescription>
+        <value>B.	FUNDRAISING INFORMATION</value>
+    </labels>
+    <labels>
+        <fullName>FYE_Audited_Financial_Statements</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FYE (	) Audited Financial Statements</shortDescription>
+        <value>2. FYE (	) Audited Financial Statements</value>
+    </labels>
+    <labels>
+        <fullName>Fundraising_methods</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Fundraising methods</shortDescription>
+        <value>15.     Fundraising methods: List all methods you use or anticipate using to raise funds (ex: mail, telephone, personal contact, membership, internet, etc.).</value>
+    </labels>
+    <labels>
+        <fullName>Fundraising_methods_a</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Fundraising methods a</shortDescription>
+        <value>a.     Are those activities conducted by:</value>
+    </labels>
+    <labels>
+        <fullName>Government_Grants</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Government Grants</shortDescription>
+        <value>13.  Government Grants : If any monies are reported on the federal tax return (in the Statement of Revenue) as government grants, then please provide a breakdown by agency name and amount for each grant. The breakdown below must match the amount reported in the tax return.</value>
+    </labels>
+    <labels>
+        <fullName>HOSPITALS_OR_AFFILIATES</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HOSPITALS OR AFFILIATES</shortDescription>
+        <value>E.	HOSPITALS OR AFFILIATES</value>
+    </labels>
+    <labels>
+        <fullName>HOSPITALS_OR_AFFILIATES_1</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HOSPITALS OR AFFILIATES 1</shortDescription>
+        <value>1.	A copy of the hospital’s state-issued license.</value>
+    </labels>
+    <labels>
+        <fullName>IRS_Form_990</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>IRS Form 990</shortDescription>
+        <value>3.	IRS Form 990: A signed copy of the most recently filed IRS Form 990, with all schedules and other attachments.</value>
+    </labels>
+    <labels>
+        <fullName>IRS_Form_990_A</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>IRS Form 990 A</shortDescription>
+        <value>a.	If the organization filed an IRS Form 990-EZ, please also complete and include a statement of functional expenses;</value>
+    </labels>
+    <labels>
+        <fullName>IRS_Form_990_B</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>IRS Form 990 B</shortDescription>
+        <value>b. If the organization filed an IRS Form 990-N and reported any income/revenue, please also complete an IRS Form 990-EZ pro forma and include a statement of functional expenses.  Note: the IRS Form 990-EZ pro forma will not be filed with any states.</value>
+    </labels>
+    <labels>
+        <fullName>IRS_application_form_A</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>IRS application form A</shortDescription>
+        <value>a.	Section 501(c)(3) organizations</value>
+    </labels>
+    <labels>
+        <fullName>IRS_application_form_B</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>IRS application form B</shortDescription>
+        <value>b.	Section 501(c)(4) organizations</value>
+    </labels>
+    <labels>
+        <fullName>IRS_application_form_B_1</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>IRS application form B 1</shortDescription>
+        <value>(1)    Form 1024, Application for Recognition of Exemption Under Section 501(a)</value>
+    </labels>
+    <labels>
+        <fullName>IRS_application_form_B_2</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>IRS application form B 2</shortDescription>
+        <value>(2)    Form 1024-A, Application for Recognition of Exemption under Section 501(c)(4) of the Internal Revenue Code</value>
+    </labels>
+    <labels>
+        <fullName>IRS_application_form_B_3</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>IRS application form B 3</shortDescription>
+        <value>(3)    Form 8976, Notice of Intent to Operate Under Section 501(c)(4) (only if Form 1024 or 1024-A has not been filed).</value>
+    </labels>
+    <labels>
+        <fullName>IRS_application_forms</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>IRS application forms</shortDescription>
+        <value>6.       IRS application forms: Please provide a signed copy of one of the following:</value>
+    </labels>
+    <labels>
+        <fullName>IRS_application_forms_A_1</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>IRS application forms A 1</shortDescription>
+        <value>(1)   Form 1023, Application for Recognition of Exemption under Section 501(c)(3) of the Internal Revenue Code;</value>
+    </labels>
+    <labels>
+        <fullName>IRS_application_forms_A_2</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>IRS application forms A 2</shortDescription>
+        <value>(2)   Form 1023-EZ, Streamlined Application for Recognition of Exemption Under Section 501(c)(3) of the Internal Revenue Code.</value>
+    </labels>
+    <labels>
+        <fullName>IRS_determination_letter</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>IRS determination letter</shortDescription>
+        <value>7.       IRS determination letter: The IRS letter recognizing the organization’s tax-exempt status under §501(c)(3) or §501(c)(4) showing its current legal name.</value>
+    </labels>
+    <labels>
+        <fullName>Illinois</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Illinois</shortDescription>
+        <value>3. Illinois:</value>
+    </labels>
+    <labels>
+        <fullName>Instruction</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Instruction</shortDescription>
+        <value>Please answer all items. If an item does not apply, please answer “N/A.”  Please make all of your answers stand out from the rest of the form by using boldface type.  Attach documents to the e-mail by which you return this questionnaire.  Thank you.</value>
+    </labels>
+    <labels>
+        <fullName>Introduction</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Introduction</shortDescription>
+        <value>This questionnaire collects all of the information and documents that we will need to prepare the charitable solicitation registration (CSR) forms (or, if applicable, requests that states confirm the organization is exempt from registration) for your organization.  Many states require most or all of this information, and at least one state requires each item.  This is a Word document; please respond in the space provided, or insert responses after the question, as appropriate.  If you have any questions, please contact the individual who sent you this questionnaire.</value>
+    </labels>
+    <labels>
+        <fullName>Methods_of_Solicitation</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Methods of Solicitation</shortDescription>
+        <value>7.  Methods of Solicitation</value>
+    </labels>
+    <labels>
+        <fullName>New_organizations</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>New organizations:</shortDescription>
+        <value>5. New organizations:  If the organization has not completed its first fiscal year, please provide the projected budget for current fiscal year:</value>
+    </labels>
+    <labels>
+        <fullName>Non_Profit_Donors</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Non-Profit Donors</shortDescription>
+        <value>12. Non-Profit Donors</value>
+    </labels>
+    <labels>
+        <fullName>Note_1</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Note 1</shortDescription>
+        <value>Note:- Each application should include all attachments and correspondence from and to the IRS.</value>
+    </labels>
+    <labels>
+        <fullName>Note_2</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Note 2</shortDescription>
+        <value>Note that charitable solicitation registration is separate from registration to conduct business as a “foreign” corporation.</value>
+    </labels>
+    <labels>
+        <fullName>Note_3</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Note 3</shortDescription>
+        <value>If “yes” to any part of Item 27, please specify the relationship and provide the names, businesses, and addresses of the related parties.</value>
+    </labels>
+    <labels>
+        <fullName>Note_5</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Note 5</shortDescription>
+        <value>Note to paralegals:  This paragraph, and any of the paragraphs below that do not apply to the client, should be deleted before sending the questionnaire to the client.</value>
+    </labels>
+    <labels>
+        <fullName>OR</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OR</shortDescription>
+        <value>OR</value>
+    </labels>
+    <labels>
+        <fullName>OTHER_INFORMATION</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OTHER INFORMATION</shortDescription>
+        <value>D.	OTHER INFORMATION</value>
+    </labels>
+    <labels>
+        <fullName>Organization_Documents</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Organization Documents</shortDescription>
+        <value>15.  Organization Documents: Please review and confirm that the documents listed below are the most current. If there have been any updates/changes, please provide copies of those documents.</value>
+    </labels>
+    <labels>
+        <fullName>Organization_Documents_Upload</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Organization Documents Upload</shortDescription>
+        <value>Organization Documents Attachment</value>
+    </labels>
+    <labels>
+        <fullName>Other_Names</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Other Names</shortDescription>
+        <value>5.   Other Names</value>
+    </labels>
+    <labels>
+        <fullName>Other_Names_File_Upload</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Other Names File Upload</shortDescription>
+        <value>If yes, please list them and provide any copies of DBA or trade name registrations.
+Max 5, most organizations have less than 5 DBAs/Other names, but we have a few that use more. Can we put instructions that if they need to upload more than 5 docs, then to combine them into a single document?</value>
+    </labels>
+    <labels>
+        <fullName>PFR_Contracts</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PFR Contracts</shortDescription>
+        <value>b. PFR Contracts: Copies of all contracts between the organization and all entities or individuals on the PFR list.</value>
+    </labels>
+    <labels>
+        <fullName>Please_provide_a_complete_FYE_federal_tax_return_with_an_officer_signed_Page</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Please provide a complete FYE (	) federal tax return with an officer signed Page</shortDescription>
+        <value>1.  Please provide a complete FYE (	) federal tax return with an officer signed Page 1 or a signed copy of the IRS Form 8879-EO (if filed electronically).</value>
+    </labels>
+    <labels>
+        <fullName>Please_provide_the_organization_s_contact_information</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Please provide the organization’s contact information</shortDescription>
+        <value>1    Please_provide_the_organization_s_contact_information</value>
+    </labels>
+    <labels>
+        <fullName>Professional_Fundraisers_and_Commercial_Co_Venturer</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Professional Fundraisers and Commercial Co-Venturers</shortDescription>
+        <value>6.   Professional Fundraisers and Commercial Co Venturers: When answering the following, please keep in mind that although an entity may not be a professional solicitor (directly contacting individuals/corporations for donations), they may be what is referred to as a “professional fundraising consultant” (they don’t contact individuals directly; however they consult/advise on materials or strategies related to fundraising). If the entity provides consulting services, they will need to be disclosed to certain states.</value>
+    </labels>
+    <labels>
+        <fullName>Professional_fundraisers</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Professional fundraisers</shortDescription>
+        <value>20.  Professional fundraisers</value>
+    </labels>
+    <labels>
+        <fullName>Programs</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Programs</shortDescription>
+        <value>17. Programs : Specific programs run by the organization in order to accomplish its stated purpose (please provide a brief description of each program).</value>
+    </labels>
+    <labels>
+        <fullName>Purpose</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Purpose</shortDescription>
+        <value>16. Purpose: The stated purpose pursued by the organization as you would like it to appear on state websites.</value>
+    </labels>
+    <labels>
+        <fullName>R1</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>R12B</shortDescription>
+        <value>B.  If you received financial support from private foundations, please list the name of the organization and the amount received.</value>
+    </labels>
+    <labels>
+        <fullName>R11A</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>R11A</shortDescription>
+        <value>A.  Please provide the Board of Directors List (names and titles) for the current fiscal year (	).</value>
+    </labels>
+    <labels>
+        <fullName>RELIGIOUS_ORGANIZATIONS</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RELIGIOUS ORGANIZATIONS</shortDescription>
+        <value>E.        RELIGIOUS ORGANIZATIONS</value>
+    </labels>
+    <labels>
+        <fullName>Relationships</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Relationships</shortDescription>
+        <value>27. 	Relationships:</value>
+    </labels>
+    <labels>
+        <fullName>Responsible_Persons</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Responsible Persons</shortDescription>
+        <value>8.  Responsible Persons</value>
+    </labels>
+    <labels>
+        <fullName>Signatures</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Signatures</shortDescription>
+        <value>14.  Signatures: The registration forms must be signed by one of the organization’s executive officers/directors (e.g. CEO, Chairman, President, Executive Director, etc.) and the organization’s chief fiscal officer (e.g. CFO, Treasurer, VP of Finance, etc.). Please review the listed signers and update as necessary. For purposes of Mississippi, e-mail addresses are required as the filing will need to be electronically signed (instructions will be provided separately).</value>
+    </labels>
+    <labels>
+        <fullName>Solicitation</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Solicitation</shortDescription>
+        <value>Solicitation means any request for a contribution, or offer to sell a product or service, regardless of whether any money or property was received, and includes requests or offers made in person, by mail or telephone, and by e-mail if the charity knows or has reason to know where the recent is located, e.g., recipient’s mailing address is in the charity’s house file.  Requests made by e-mail when the charity doesn’t know the recipient’s location, and on a charity’s website, are generally not treated as solicitations for purposes of CSR laws.</value>
+    </labels>
+    <labels>
+        <fullName>Solicitation_restrictions</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Solicitation restrictions</shortDescription>
+        <value>2.   Solicitation restrictions:</value>
+    </labels>
+    <labels>
+        <fullName>State_Specific_Funds</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>State Specific Funds</shortDescription>
+        <value>10. State Specific Funds</value>
+    </labels>
+    <labels>
+        <fullName>Statement_of_Functional_Expenses_submitted</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Statement of Functional Expenses - submitted</shortDescription>
+        <value>3.  Statement of Functional Expenses - submitted:If the organization is filing a federal tax return that does not contain a completed Statement of Functional Expenses, then please complete the attached Statement of Functional Expenses. Total expenses on the form must match the Total Expenses on the federal tax return.</value>
+    </labels>
+    <labels>
+        <fullName>States_where_contributions_have_been_solicited</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>States where contributions have been solicited</shortDescription>
+        <value>17.  States where contributions have been solicited:  Regardless of registration, did the organization solicit in any states to date? If yes, please list the states where solicitations/asks (in-person or by mail, e-mail, telephone, etc.), and the dates when solicitations were made (or mailed).</value>
+    </labels>
+    <labels>
+        <fullName>States_where_registered</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>States where registered</shortDescription>
+        <value>16. States where registered: A list of all states where the organization:</value>
+    </labels>
+    <labels>
+        <fullName>Use_of_Fund</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Use of Fund</shortDescription>
+        <value>18.  Use of Fund : Upon what will the collected funds be spent?</value>
+    </labels>
+    <labels>
+        <fullName>WC_B_Customer_users</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WC&amp;B Customer users</shortDescription>
+        <value>WC&amp;B Customer users</value>
+    </labels>
+    <labels>
+        <fullName>X10_state_Specific_Funds_A</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>10.state Specific Funds A</shortDescription>
+        <value>A.  Please provide the total amount of funds received from each of the following states during the last fiscal year (		):</value>
+    </labels>
+    <labels>
+        <fullName>X6_1</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>6.1</shortDescription>
+        <value>If YES, please provide the following for each entity:</value>
+    </labels>
+    <labels>
+        <fullName>X6_PFCC</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>6 PFCC</shortDescription>
+        <value>If yes, please provide a fully executed copy of the contract.</value>
+    </labels>
+    <labels>
+        <fullName>ers_CancelButton</fullName>
+        <categories>buttons</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cancel</shortDescription>
+        <value>Cancel</value>
+    </labels>
+    <labels>
+        <fullName>ers_ClearFilterAction</fullName>
+        <categories>actions</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Clear Filter</shortDescription>
+        <value>Clear Filter</value>
+    </labels>
+    <labels>
+        <fullName>ers_ClearSelectionButton</fullName>
+        <categories>buttons</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Clear Selection</shortDescription>
+        <value>Clear Selection</value>
+    </labels>
+    <labels>
+        <fullName>ers_ColumnHeader</fullName>
+        <categories>headers</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Column</shortDescription>
+        <value>Column</value>
+    </labels>
+    <labels>
+        <fullName>ers_EmptyTableMessage</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Empty</shortDescription>
+        <value>This table currently has no data to display</value>
+    </labels>
+    <labels>
+        <fullName>ers_ErrorRequiredEntry</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Required</shortDescription>
+        <value>This is a required entry.  At least 1 row must be selected.</value>
+    </labels>
+    <labels>
+        <fullName>ers_FilterHeader</fullName>
+        <categories>headers</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Filter</shortDescription>
+        <value>Filter</value>
+    </labels>
+    <labels>
+        <fullName>ers_LabelHeader</fullName>
+        <categories>headers</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Label</shortDescription>
+        <value>Label</value>
+    </labels>
+    <labels>
+        <fullName>ers_SaveButton</fullName>
+        <categories>buttons</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Save</shortDescription>
+        <value>Save</value>
+    </labels>
+    <labels>
+        <fullName>ers_SetFilterAction</fullName>
+        <categories>actions</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Set Filter</shortDescription>
+        <value>Set Filter</value>
+    </labels>
+    <labels>
+        <fullName>fsc_AccessLevel</fullName>
+        <categories>labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AccessLevel</shortDescription>
+        <value>Access Level</value>
+    </labels>
+    <labels>
+        <fullName>fsc_Back</fullName>
+        <categories>Buttons,Filters,Title</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back</shortDescription>
+        <value>Back</value>
+    </labels>
+    <labels>
+        <fullName>fsc_ButtonIsNotSupportedMessage</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ButtonIsNotSupportedMessage</shortDescription>
+        <value>Following buttons are note supported:</value>
+    </labels>
+    <labels>
+        <fullName>fsc_ConditionLogicHelpText</fullName>
+        <categories>labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ConditionLogicHelpText</shortDescription>
+        <value>Use parentheses, AND, OR, and NOT to customize the logic. For example, if you enter “(1 AND 2 AND 3) OR 4”, the flow evaluates whether the first three conditions are true or only the fourth condition is true.</value>
+    </labels>
+    <labels>
+        <fullName>fsc_Delete</fullName>
+        <categories>labels, buttons</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Delete</shortDescription>
+        <value>Delete</value>
+    </labels>
+    <labels>
+        <fullName>fsc_FieldIsNotSupportedMessage</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FieldIsNotSupportedMessage</shortDescription>
+        <value>Following fields are not supported:</value>
+    </labels>
+    <labels>
+        <fullName>fsc_FieldTypeNotSuportedMessage</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>fsc_FieldTypeNotSuportedMessage</shortDescription>
+        <value>You provided an unsupported value for the DataTypeFilter input on Object and Field Picker. Currently the only supported value is ’picklist’</value>
+    </labels>
+    <labels>
+        <fullName>fsc_For</fullName>
+        <categories>Buttons</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>For</shortDescription>
+        <value>For</value>
+    </labels>
+    <labels>
+        <fullName>fsc_Key_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Key Label</shortDescription>
+        <value>Key</value>
+    </labels>
+    <labels>
+        <fullName>fsc_LackingPermissions</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LackingPermissions</shortDescription>
+        <value>You don\&apos;t have the proper permissions for ths action</value>
+    </labels>
+    <labels>
+        <fullName>fsc_ManagerEmptyMessage</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ManagerEmptyMessage</shortDescription>
+        <value>&quot;Manager APEX Class&quot; can not be empty</value>
+    </labels>
+    <labels>
+        <fullName>fsc_MultipleGroupsForRole</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MultipleGroupsForRole</shortDescription>
+        <value>There are multiple groups for that role</value>
+    </labels>
+    <labels>
+        <fullName>fsc_Name</fullName>
+        <categories>quicklinks, Labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Name</shortDescription>
+        <value>Name</value>
+    </labels>
+    <labels>
+        <fullName>fsc_NonePicklistValueLabel</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NonePicklistValueLabel</shortDescription>
+        <value>-- None --</value>
+    </labels>
+    <labels>
+        <fullName>fsc_OWDReadWrite</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OWDReadWrite</shortDescription>
+        <value>Sharing Settings must be private or public read/write to enable manual sharing</value>
+    </labels>
+    <labels>
+        <fullName>fsc_OwnerAdminModify</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OwnerAdminModify</shortDescription>
+        <value>Only the record owner or administrators can modify permissions</value>
+    </labels>
+    <labels>
+        <fullName>fsc_PublicGroups</fullName>
+        <categories>labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PublicGroups</shortDescription>
+        <value>Public Groups</value>
+    </labels>
+    <labels>
+        <fullName>fsc_Queues</fullName>
+        <categories>labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Queues</shortDescription>
+        <value>Queues</value>
+    </labels>
+    <labels>
+        <fullName>fsc_Read</fullName>
+        <categories>labels, buttons</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Read</shortDescription>
+        <value>Read</value>
+    </labels>
+    <labels>
+        <fullName>fsc_ReadWrite</fullName>
+        <categories>labels, buttons</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReadWrite</shortDescription>
+        <value>Read / Write</value>
+    </labels>
+    <labels>
+        <fullName>fsc_Reason</fullName>
+        <categories>labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Reason</shortDescription>
+        <value>Reason</value>
+    </labels>
+    <labels>
+        <fullName>fsc_RelatedUsers</fullName>
+        <categories>labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RelatedUsers</shortDescription>
+        <value>Related Users</value>
+    </labels>
+    <labels>
+        <fullName>fsc_Roles</fullName>
+        <categories>labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Roles</shortDescription>
+        <value>Roles</value>
+    </labels>
+    <labels>
+        <fullName>fsc_Search</fullName>
+        <categories>Actions,Buttons,quicklinks</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Search in</shortDescription>
+        <value>Search in</value>
+    </labels>
+    <labels>
+        <fullName>fsc_SearchFor</fullName>
+        <categories>labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SearchFor</shortDescription>
+        <value>For</value>
+    </labels>
+    <labels>
+        <fullName>fsc_SetAccessLevel</fullName>
+        <categories>labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SetAccessLevel</shortDescription>
+        <value>Set Access Level</value>
+    </labels>
+    <labels>
+        <fullName>fsc_SupportedAddCapabilitiesEmptyMessage</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SupportedAddCapabilitiesEmptyMessage</shortDescription>
+        <value>&quot;Add Capabilities&quot; can not be empty</value>
+    </labels>
+    <labels>
+        <fullName>fsc_SupportedButtonsEmptyMessage</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SupportedButtonsEmptyMessage</shortDescription>
+        <value>&quot;Supported Buttons&quot; can not be empty</value>
+    </labels>
+    <labels>
+        <fullName>fsc_SupportedEditCapabilitiesEmptyMessage</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SupportedEditCapabilitiesEmptyMessage</shortDescription>
+        <value>&quot;Edit Capabilities&quot; can not be empty</value>
+    </labels>
+    <labels>
+        <fullName>fsc_TooManyResultsMessage</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TooManyResultsMessage</shortDescription>
+        <value>Your search found more than 200 results.  Keep typing to make it more specific</value>
+    </labels>
+    <labels>
+        <fullName>fsc_Type</fullName>
+        <categories>Buttons,Filters,Title</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Type</shortDescription>
+        <value>Type</value>
+    </labels>
+    <labels>
+        <fullName>fsc_UserOrGroup</fullName>
+        <categories>labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>UserOrGroup</shortDescription>
+        <value>User Or Group</value>
+    </labels>
+    <labels>
+        <fullName>fsc_Users</fullName>
+        <categories>labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Users</shortDescription>
+        <value>Users</value>
+    </labels>
+    <labels>
+        <fullName>fsc_Value_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Value Label</shortDescription>
+        <value>Value</value>
+    </labels>
+</CustomLabels>

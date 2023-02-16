@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>G_Fundraising_exp_mgmt_general_exp__c</fullName>
+    <externalId>false</externalId>
+    <formula>(Program__r.X25_D_Fundraising_Expenses_Total__c +  Program__r.X25_C_Management_and_general_expenses__c) / Program__r.X1h_Total__c</formula>
+    <inlineHelpText>(G) Fundraising exp. + mgmt/general exp. as a % of funds raised</inlineHelpText>
+    <label>(G) Fundraising exp. + mgmt/general exp.</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

@@ -1,0 +1,131 @@
+<apex:page standardController="User" cache="true" showHeader="false"  docType="html-5.0"  applyHtmlTag="false" applyBodyTag="false">
+    <head>
+    <style type="text/css">
+    body {
+        background: #f4f6f9 !important;
+        box-shadow: none !important;
+    }
+    .col-md-8.col-xs-12 {
+    width: 70%;
+}
+h2.username {
+    font-size: 1.8rem !important;
+    color: #000000;
+    font-weight: 300;
+    margin-top: 5px;
+    display: block;
+    margin-left: 4px;
+}
+    .oneAlohaPage.forceCommunityVisualforcePage{
+        background-image: url(https://cube84dev-testcustomer.cs171.force.com/resource/1654860907000/bg_msg) !important;
+        background-repeat: no-repeat !important;
+        background-position: center !important;
+        background-size: cover !important;
+    }
+    .username
+    {
+        font-size: 2.3rem !important;
+        color: #002843;
+        font-weight: 700;
+        padding-left: 20px;
+        font-family:Raleway, sans-serif;
+    }
+    h1.username {
+        font-size: 2.3rem !important;
+        color: #002843;
+        font-weight: 700;
+        padding-left:20px;
+    }
+    .banner-image {
+    transform: translateY(-20px);
+    width: 310px;
+    margin: 0;
+}
+    .welcome-message {
+    margin: 0 0 0 0;
+    height: 194px;
+    display: flex;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 1px 1px 18px #6966662b;
+    background-image: url(https://cube84dev-testcustomer.cs171.force.com/resource/1654860907000/bg_msg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    align-items: center;
+    justify-content: space-between;
+    transform: translateY(50px);
+}
+
+    @media only screen and (max-width:767px){
+        .welcome-message{
+            flex-direction: column;
+            height: 165px;
+            transform: translateY(0px);
+        }
+        
+        .welcome-message.container-fluid {
+    margin: 0;
+}
+        .banner-image {
+    transform: translateY(-10px);
+    width: 204px;
+    margin: 0 auto;
+    transform: translateX(26%);
+}
+.welcome-message{
+    background-position: initial;
+        margin-top: 25px;
+}
+img.img-responsive.banner-image{
+    display:none;
+}
+.col-md-8.col-xs-12 {
+    width: 100%;
+    padding-top: 66px;
+}
+        h1.username {
+            font-size: 1.8rem !important;
+            transform: translateY(135%);
+        }
+        .col-md-8.col-xs-12 {
+    width: 100%;
+}
+    }
+    @media only screen and (min-width:768px) and (max-width:990px){
+        h1.username {
+            font-size: 1.8rem !important;
+            color: #002843;
+            font-weight: 700;
+            display: block;
+            padding-left: 20px;
+        }
+    }
+    @media only screen and (max-width:320px){
+        h1.username {
+    font-size: 1.2rem !important;}
+    h2.username {
+    font-size: 1.1rem !important;
+    font-weight: 400;
+}
+.welcome-message.container-fluid {
+    margin: 0;
+    height: 165px;
+}
+    }
+        </style>
+     </head>
+    <div class="welcome-message container-fluid">
+    <div class="col-md-8 col-xs-12" styleClass="username">
+        <h1 class="username"> Welcome - {!$User.FirstName} {!$User.LastName}<br/></h1>
+        <h2 class="username">{!$User.User_Account__c}</h2><br/>
+        
+    </div>
+    <div class="col-md-4 col-xs-12">
+        <!--<img src="https://cube84dev-testcustomer.cs171.force.com/resource/1654861154000/banner_image" class="img-responsive banner-image"/>-->
+        <!--<img src="https://cube84dev-testcustomer.cs171.force.com/resource/1658325459000/bg_map" class="img-responsive banner-image"  / >-->
+        <img src="https://cube84dev-testcustomer.cs171.force.com/resource/1659009543000/home_banner_map_image" class="img-responsive banner-image"  / >
+    </div>
+</div>
+    
+</apex:page>

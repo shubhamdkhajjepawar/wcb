@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Approval_request_approved</fullName>
+        <description>Approval request approved</description>
+        <protected>false</protected>
+        <recipients>
+            <field>LastModifiedById</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Approval_request_approved</template>
+    </alerts>
+    <alerts>
+        <fullName>Approval_request_rejected</fullName>
+        <description>Approval request rejected</description>
+        <protected>false</protected>
+        <recipients>
+            <field>LastModifiedById</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Approval_request_rejected</template>
+    </alerts>
+    <alerts>
+        <fullName>Record_change_request_Approval_Notification</fullName>
+        <description>Record change request Approval Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Record_change_request_Approval_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>approval_request_approved_for_customer</fullName>
+        <description>approval request approved for customer user</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Approval_request_approved</template>
+    </alerts>
+    <alerts>
+        <fullName>approval_request_approved_last_mod</fullName>
+        <description>approval request approved last mod</description>
+        <protected>false</protected>
+        <recipients>
+            <field>LastModifiedById</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Approval_request_approved</template>
+    </alerts>
+    <alerts>
+        <fullName>approval_request_rejected_last_mod</fullName>
+        <description>approval request rejected last mod</description>
+        <protected>false</protected>
+        <recipients>
+            <field>LastModifiedById</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Approval_request_rejected</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Approved</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Populate_FEIN_from_Pre_FEIN</fullName>
+        <field>FEIN__c</field>
+        <formula>Pre_Value_FEIN__c</formula>
+        <name>Populate FEIN from Pre FEIN</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Populate_Fiscal_year_from_Pre_value_F</fullName>
+        <field>Fiscal_Year_End__c</field>
+        <formula>Pre_value_Fiscal_Year_End__c</formula>
+        <name>Populate Fiscal year from Pre value  F</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Rejected</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Old_Fiscal_Year_End</fullName>
+        <field>Pre_value_Fiscal_Year_End__c</field>
+        <formula>Fiscal_Year_End__c</formula>
+        <name>Update Old Fiscal Year End</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Rejected_FEIN</fullName>
+        <field>Rejected_FIEN__c</field>
+        <formula>FEIN__c</formula>
+        <name>Update Rejected FEIN</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Rejected_Fiscal_Year_End</fullName>
+        <field>Rejected_Fiscal_Year_End__c</field>
+        <formula>Fiscal_Year_End__c</formula>
+        <name>Update Rejected Fiscal Year End</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>populate_Pre_Org_Legal_name</fullName>
+        <field>Name</field>
+        <formula>Pre_Organization_s_Legal_Name__c</formula>
+        <name>populate Pre Org Legal name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update_FEIN</fullName>
+        <description>update Old FEIN value</description>
+        <field>Pre_Value_FEIN__c</field>
+        <formula>FEIN__c</formula>
+        <name>update FEIN</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update_Old_Org_Legal_Name</fullName>
+        <field>Pre_Organization_s_Legal_Name__c</field>
+        <formula>Name</formula>
+        <name>update Old Org Legal Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update_Old_fien</fullName>
+        <field>Pre_Organization_s_Legal_Name__c</field>
+        <formula>Name</formula>
+        <name>update Old fien</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update_Rejected_Org_Legal_Nam</fullName>
+        <field>Rejected_Organization_s_Legal_Name__c</field>
+        <formula>Name</formula>
+        <name>update Rejected Org Legal Nam</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update_approval_process_to_pending</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Pending</literalValue>
+        <name>update approval process to pending</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update_old_org_name</fullName>
+        <field>Pre_Organization_s_Legal_Name__c</field>
+        <formula>Name</formula>
+        <name>update old org name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>update Old  Org name</fullName>
+        <actions>
+            <name>update_Old_fien</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Account.Approval_Status__c</field>
+            <operation>equals</operation>
+            <value>Rejected</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

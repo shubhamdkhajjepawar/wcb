@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Control_persons__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>25.   A list of the name, home address, birth date, and SSN of person(s) conducting the organization’s day-to-day operations. (States keep SSNs confidential.) Please note that this person may be required to provide their Social Security Number, Date of Birth, and a copy of their photo ID at the time of signing forms.</inlineHelpText>
+    <label>Control persons</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

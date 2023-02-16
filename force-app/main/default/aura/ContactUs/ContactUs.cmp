@@ -1,0 +1,44 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                access="global" controller="LeadController">
+    
+	 <aura:attribute name="salutationOptions" type="List" default="[
+        {'label': 'Mr.', 'value': 'Mr.'},
+        {'label': 'Ms.', 'value': 'Ms.'},
+        {'label': 'Mrs.', 'value': 'Mrs.'},
+        {'label': 'Dr.', 'value': 'Dr.'},
+        {'label': 'Prof.', 'value': 'Prof.'},
+    ]"/>
+    <aura:attribute name="newLead" type="Lead"
+        default="{ 'sobjectType': 'Lead',
+                   'Title': '',
+                   'FirstName': '',
+                   'LastName': '',
+                   'Email': '',
+                 	'Phone':'',
+                   'Company': '' }" />
+    <aura:attribute name="message" type="String" default=""/>
+    
+    <lightning:card iconName="standard:lead" title="Contact Us">
+        <div class="slds-p-around_medium">
+            <lightning:layout>
+                <lightning:layoutItem size="4" padding="around-small">
+                    <lightning:inputName aura:id="lead"
+                                         label="Name"
+                                         firstName="{!v.newLead.FirstName}"
+                                         lastName="{!v.newLead.LastName}"
+                                         salutation="{!v.newLead.Title}"
+                                         options="{!v.salutationOptions}"
+                                         required="true"/>
+                
+                   <lightning:input aura:id="lead" label="Email" type="email" value="{!v.newLead.Email}" required="true"/>
+                    <lightning:input aura:id="lead" label="Phone" type="phone" value="{!v.newLead.Phone}" required="true"/>
+                    <lightning:textarea aura:id="lead" label="Organization" value="{!v.newLead.Company}" required="true"/>
+                    <lightning:button label="Contact Us" onclick="{!c.handleCreateContact}" variant="brand" class="slds-m-top_medium"/>
+                    
+
+    </lightning:layoutItem>
+            </lightning:layout>
+            <p>{!v.message}</p>
+        </div>
+    </lightning:card>
+</aura:component>

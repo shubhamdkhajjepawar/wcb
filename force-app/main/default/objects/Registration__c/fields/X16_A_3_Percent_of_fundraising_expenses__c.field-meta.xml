@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X16_A_3_Percent_of_fundraising_expenses__c</fullName>
+    <externalId>false</externalId>
+    <formula>X16_A_2__c / X16_A_1__c</formula>
+    <label>16(A)3 Percent of fundraising expenses</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

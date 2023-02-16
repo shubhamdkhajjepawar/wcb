@@ -1,0 +1,1434 @@
+<apex:page standardController="Renewal_CSR__c" extensions="csrRenewalClientController" lightningStylesheets="true" doctype="html-5.0" >
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin " />
+            <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    </head>
+    <style>
+        body{
+            font-family: 'Raleway', sans-serif !important;
+            color:#000;
+            background: #f5f7fa !important;
+        }
+        input#printpagebutton {
+            width: 150px;
+            background: #3295b2 !important;
+            color: #fff !important;
+            font-size: 16px !important;
+            cursor: pointer;
+            font-family: 'Raleway', sans-serif !important;
+            font-weight:600;
+        }
+        input#printpagebutton:hover{
+                background: #b59a63 !important;
+                cursor:pointer;
+        }
+        html body.sfdcBody{
+            background: #f5f7fa !important;
+        }
+        html .brandQuaternaryBgr {
+            background: #f5f7fa !important;
+        }
+        html .brandQuaternaryBgr {
+            background: #f5f7fa!important;
+        }
+        body.hasMotif.Custom57Tab.sfdcBody.brandQuaternaryBgr {
+            background: #f5f7fa !important;
+        }
+        button {
+            background: #2e94b1 !important;
+            padding: 15px 50px !important;
+            border-radius: 0 !important;
+            color: #fff !important;
+            border: 0 !important;
+            margin-bottom: 40px !important;
+            font-size: 16px !important;
+            font-family: 'Raleway' !important;
+            letter-spacing: 1px;
+        }
+         button:hover{
+                background: #b59a63 !important;
+                cursor:pointer;
+            }
+        p{
+            font-family: 'Raleway', sans-serif;
+        }
+        .input-field > span {
+    font-family: 'Raleway', sans-serif !important;
+    font-size: 16px;
+}
+        .field-title.head {
+            font-size: 1.3rem;
+            color: #000;
+            text-transform: uppercase;
+            font-weight: 500;
+            text-align: center;
+            line-height: 35px;
+            letter-spacing: 2px;
+        }
+        p.head {
+        color: #002943;
+        font-weight: 600;
+        text-align: center;
+        line-height: 35px;
+        font-size: 16px !important;
+    }
+        table.multiSelectPicklistTable{
+            width:100%;
+        }
+        tr.multiSelectPicklistRow {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+        }
+        .input-field.files > input {
+            background: none !important;
+            border:0px solid #ccc !important;
+        }
+        
+        .grid.flex-box > .input-field {
+            width: 100%;
+        }
+        select#j_id0\:theForm1\:pb2\:j_id259_unselected {
+            width: 100% !important;
+        }
+        select#j_id0\:theForm1\:pb2\:j_id259_selected{
+            width: 100% !important;
+        }
+        .grid.flex-box {
+            display: flex;
+            flex-direction: column;
+            align-content: flex-start;
+            align-items: flex-start;
+        }
+        select {
+            cursor: pointer !important;
+        }
+        select * {
+            cursor: pointer !important;
+        }
+        option {
+            cursor: pointer !important;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            column-gap: 20px;
+            word-break: break-word;
+        }
+        input, textarea{
+            padding: 12px 9px !important;
+        }
+        input, textarea, select {
+            width: 100%;
+            background: white !important;
+            padding: 12px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc !important;
+            outline: none !important;
+        }
+        input, textarea, select:focus{
+            border:1px solid #ccc !important;
+            outline: none !important;
+        }
+        input, textarea, select:active{
+            border:1px solid #ccc !important;
+            outline: none !important;
+        }
+        input#j_id0\:theForm1\:pb3\:j_id63{
+            border:1px solid #ccc !important;
+        }
+        textarea#j_id0\:theForm1\:pb3\:j_id59{
+            border:1px solid #ccc !important;
+            outline: none !important;
+        }
+        textarea#j_id0\:theForm1\:pb3\:j_id59:focus{
+            border:1px solid #ccc !important;
+            outline: none !important;
+        }
+        textarea#j_id0\:theForm1\:pb3\:j_id59:active{
+            border:1px solid #ccc !important;
+            outline: none !important;
+        }
+        .input-field.files > input:focus{
+            border:1px solid #ccc !important;
+        }
+        .center {
+            text-align: center;
+        }
+        .field-title {
+            font-size: 16px;
+            line-height: 24px;
+            color: #000;
+        }
+        .grid-container {
+            width: 70%;
+            margin: 28px auto;
+        }
+        #ct2 {
+            display: flex;
+            justify-content: center;
+            column-gap: 20px;
+        }
+        form#j_id0\:theForm1 {
+            border: 0 !important;
+            background: none !important;
+        }
+        div#j_id0\:theForm1\:pb2 {
+            background: #fff0 !important;
+            border: 0 !important;
+        }
+        h1 {
+            text-align: center;
+            color: #3495b2;
+            margin-bottom: 0;
+            display: block;
+            font-size: 1.5rem;
+        }
+        h3 {
+            text-align: center;
+            margin-top: 3px;
+            margin-bottom: 26px;
+            display: block;
+            font-size: 1rem;
+            line-height: 23px;
+        }
+        html .brandSecondaryBrd {
+            border-color: #51606e00!important;
+        }
+        body.hasMotif.accountTab.sfdcBody.brandQuaternaryBgr {
+            background: #f5f7fa !important;
+            border: 0 !important;
+        }
+        input.btn {
+            background: #3495b2 !important;
+            text-align: center !important;
+            font-size: 16px !important;
+            font-weight: 500;
+            width: 150px !important;
+            border-radius: 0 !important;
+            padding: 0 !important;
+            color: #fff !important;
+            height: 40px;
+            font-family: 'Raleway', sans-serif;
+        }
+        .text-field {
+            font-size: 16px;
+            line-height: 24px;
+            font-family: 'Raleway', sans-serif;
+        }
+        input.btn:hover {
+            background: #b09a51 !important;
+        }
+        
+      </style>
+    <apex:form id="theForm1" style="border-style:solid;border-width:2px;
+                                    border-color:black;background-image:linear-gradient(to right, #ffffff , #ffffff);margin-left:0px">
+        <apex:pageBlock id="pb3" >
+            <div class="grid-container">
+                <div class="field-title head">
+                    <apex:outputText >{!$Label.Directions}</apex:outputText>
+                </div>
+            </div>
+            <div class="grid-container" style="{!IF((rcsr.client__r.Update_Ongoing_Status__c == false), 'display:block', 'display:none')}">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText >{!$Label.Please_provide_a_complete_FYE_federal_tax_return_with_an_officer_signed_Page}</apex:outputText>
+                    </div>
+                    <div class="input-field files">
+                        <apex:inputfile value="{!rfile.body}" filename="{!rfile.Name}" />
+                        <apex:inputfile value="{!rfile3.body}" filename="{!rfile3.Name}" /> <br/>
+                <apex:inputfile value="{!rfile4.body}" filename="{!rfile4.Name}" /> <br/>
+                <apex:inputfile value="{!rfile5.body}" filename="{!rfile5.Name}" /> <br/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container" style="{!IF((rcsr.client__r.Update_Ongoing_Status__c == false), 'display:block', 'display:none')}">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText >{!$Label.FYE_Audited_Financial_Statements}</apex:outputText>
+                    </div>
+                    <div class="input-field files">
+                        <apex:inputfile value="{!rfile1.body}" filename="{!rfile1.Name}" />
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container" style="{!IF((rcsr.client__r.Update_Ongoing_Status__c == false), 'display:block', 'display:none')}">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText >{!$Label.Statement_of_Functional_Expenses_submitted}</apex:outputText>
+                    </div>
+                    <div class="input-field files">
+                        <apex:inputfile value="{!rfile2.body}" filename="{!rfile2.Name}" /> 
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="field-title">
+                    <apex:outputText >{!$Label.Charity_Contact_Information}</apex:outputText>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.Primary_Address__CountryCode__s.Label}"></apex:outputText>
+                    </div>
+                    <div class="input-field" style="{!IF((rcsr.client__r.Update_Ongoing_Status__c == false), 'display:block', 'display:none')}">
+                        <apex:inputField value="{!rcsr.Primary_Address__CountryCode__s}" />
+                    </div>
+                    <div class="input-field" style="{!IF((rcsr.client__r.Update_Ongoing_Status__c == true), 'display:block', 'display:none')}">
+                        <apex:outputField value="{!rcsr.Primary_Address__CountryCode__s}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.Primary_Address__Street__s.Label}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.Primary_Address__Street__s}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.Primary_Address__Street__s}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.Primary_Address__City__s.Label}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.Primary_Address__City__s}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.Primary_Address__City__s}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.Primary_Address__StateCode__s.Label}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.Primary_Address__StateCode__s }" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.Primary_Address__StateCode__s }" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.Primary_Address__PostalCode__s.Label}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.Primary_Address__PostalCode__s }" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.Primary_Address__PostalCode__s }" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.Mailing_Address__CountryCode__s.Label}"></apex:outputText>
+                    </div>
+                    <div class="input-field" style="{!IF((rcsr.client__r.Update_Ongoing_Status__c == false), 'display:block', 'display:none')}">
+                        <apex:inputField value="{!rcsr.Mailing_Address__CountryCode__s}" />
+                        
+                    </div>
+                    <div class="input-field" style="{!IF((rcsr.client__r.Update_Ongoing_Status__c == true), 'display:block', 'display:none')}">
+                        <apex:outputField value="{!rcsr.Mailing_Address__CountryCode__s}" />
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.Mailing_Address__Street__s.Label}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.Mailing_Address__Street__s}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.Mailing_Address__Street__s}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.Mailing_Address__City__s.Label}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.Mailing_Address__City__s}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.Mailing_Address__City__s}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.Mailing_Address__StateCode__s.Label}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.Mailing_Address__StateCode__s }" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.Mailing_Address__StateCode__s }" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.Mailing_Address__PostalCode__s.Label}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.Mailing_Address__PostalCode__s }" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.Mailing_Address__PostalCode__s }" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.Phone__c.Label}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.Phone__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        
+                        <apex:outputField value="{!rcsr.Phone__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.Fax__c.Label}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.Fax__c }" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.Fax__c }" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.Email__c.Label}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.Email__c }" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.Email__c }" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.Website__c.Label}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.Website__c }" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.Website__c }" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.X4_Changes__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.X4_Changes__c }" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.X4_Changes__c }" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="field-title">
+                    <apex:outputText >{!$Label.Other_Names}</apex:outputText>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R5_a__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.R5_a__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.R5_a__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container" style="{!IF((rcsr.client__r.Update_Ongoing_Status__c == false), 'display:block', 'display:none')}">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText >{!$Label.Other_Names_File_Upload}</apex:outputText>
+                    </div>
+                    <div class="input-field files">
+                        <apex:inputfile value="{!rfile6.body}" filename="{!rfile6.Name}" /> <br/>
+                        <apex:inputfile value="{!rfile7.body}" filename="{!rfile7.Name}" /> <br/>
+                        <apex:inputfile value="{!rfile8.body}" filename="{!rfile8.Name}" /> <br/>
+                        <apex:inputfile value="{!rfile9.body}" filename="{!rfile9.Name}" /> <br/>
+                        <apex:inputfile value="{!rfile16.body}" filename="{!rfile16.Name}" /> <br/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="field-title">
+                    <apex:outputText >{!$Label.Professional_Fundraisers_and_Commercial_Co_Venturer}</apex:outputText>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.X6_1_If_Yes__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.X6_1_If_Yes__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.X6_1_If_Yes__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R6_1_Name__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.R6_1_Name__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.R6_1_Name__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="field-title">
+                    <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R6_2_Address_c__c.Label}"></apex:outputText>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R6_2_Address_c__CountryCode__s.Label}"></apex:outputText>
+                    </div>
+                    <div class="input-field" style="{!IF((rcsr.client__r.Update_Ongoing_Status__c == false), 'display:block', 'display:none')}">
+                        <apex:inputField value="{!rcsr.R6_2_Address_c__CountryCode__s}"/>
+                    </div>
+                    <div class="input-field" style="{!IF((rcsr.client__r.Update_Ongoing_Status__c == true), 'display:block', 'display:none')}">
+                        <apex:outputField value="{!rcsr.R6_2_Address_c__CountryCode__s}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R6_2_Address_c__Street__s.Label}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.R6_2_Address_c__Street__s}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.R6_2_Address_c__Street__s}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R6_2_Address_c__City__s.Label}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.R6_2_Address_c__City__s}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.R6_2_Address_c__City__s}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R6_2_Address_c__StateCode__s .Label}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.R6_2_Address_c__StateCode__s  }" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.R6_2_Address_c__StateCode__s  }" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R6_2_Address_c__PostalCode__s .Label}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.R6_2_Address_c__PostalCode__s  }" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.R6_2_Address_c__PostalCode__s  }" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R6_3_Phone_Number__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.R6_3_Phone_Number__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.R6_3_Phone_Number__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R6_1_4__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.R6_1_4__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.R6_1_4__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R6_1_5__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.R6_1_5__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.R6_1_5__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R6_1_6__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.R6_1_6__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.R6_1_6__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R6_2__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.R6_2__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.R6_2__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.Currently_providing_services__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.Currently_providing_services__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.Currently_providing_services__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R6_4__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.R6_4__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.R6_4__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R6_5__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.R6_5__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.R6_5__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R6_6__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.R6_6__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.R6_6__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container" style="{!IF((rcsr.client__r.Update_Ongoing_Status__c == false), 'display:block', 'display:none')}">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText >{!$Label.X6_PFCC}</apex:outputText>
+                    </div>
+                    <div class="input-field files">
+                        <apex:inputfile value="{!rfile10.body}" filename="{!rfile10.Name}" /> <br/>
+                <apex:inputfile value="{!rfile11.body}" filename="{!rfile11.Name}" /> <br/>
+                <apex:inputfile value="{!rfile12.body}" filename="{!rfile12.Name}" /> <br/>
+                <apex:inputfile value="{!rfile13.body}" filename="{!rfile13.Name}" /> <br/>
+                 <apex:inputfile value="{!rfile17.body}" filename="{!rfile17.Name}" /> <br/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="field-title">
+                    <apex:outputText >{!$Label.Methods_of_Solicitation}</apex:outputText>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.Methods_of_Solicitation__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.Methods_of_Solicitation__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.Methods_of_Solicitation__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.X7_Changes__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.X7_Changes__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.X7_Changes__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.Employees_of_the_organization__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.Employees_of_the_organization__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.Employees_of_the_organization__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.Volunteers__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.Volunteers__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.Volunteers__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="field-title">
+                    <apex:outputText >{!$Label.Responsible_Persons}</apex:outputText>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.Authorized_to_Sign_Checks__c.label}"/>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.Authorized_to_Sign_Checks__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.Authorized_to_Sign_Checks__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.Budget_Approval__c.label}"/>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.Budget_Approval__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.Budget_Approval__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.Custody_of_Financial_Records__c.label}"/>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.Custody_of_Financial_Records__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                         <apex:outputField value="{!rcsr.Custody_of_Financial_Records__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.Custody_of_Funds__c.label}"/>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.Custody_of_Funds__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.Custody_of_Funds__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.Distribution_of_Funds__c.label}"/>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.Distribution_of_Funds__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.Distribution_of_Funds__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.Fund_Raising_Activities__c.label}"/>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.Fund_Raising_Activities__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.Fund_Raising_Activities__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.X8_Changes__c.label}"/>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.X8_Changes__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.X8_Changes__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="field-title">
+                    <apex:outputText >{!$Label.Banks}</apex:outputText>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.Banks__c.label}"/>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.Banks__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.Banks__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.X9_Changes__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.X9_Changes__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.X9_Changes__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="field-title">
+                    <apex:outputText >{!$Label.State_Specific_Funds}</apex:outputText>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="field-title">
+                    <apex:outputText >{!$Label.X10_state_Specific_Funds_A}</apex:outputText>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.R10A_Minnesota__c.label}"/>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.R10A_Minnesota__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.R10A_Minnesota__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R10A_North_Dakota__c.label}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.R10A_North_Dakota__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.R10A_North_Dakota__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.R10A_Ohio__c.label}"/>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.R10A_Ohio__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.R10A_Ohio__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R10A_Oregon__c.label}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.R10A_Oregon__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.R10A_Oregon__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.R10A_Utah__c.label}"/>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.R10A_Utah__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.R10A_Utah__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R10A_West_Virginia__c.label}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.R10A_West_Virginia__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.R10A_West_Virginia__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R10B__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.R10B__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.R10B__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="field-title">
+                    <apex:outputText >{!$Label.Board_of_Directors}</apex:outputText>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="field-title">
+                    <apex:outputText >{!$Label.R11A}</apex:outputText>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.R11A_Name__c.label}"/>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.R11A_Name__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.R11A_Name__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.R11A_Title__c.label}"/>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.R11A_Title__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.R11A_Title__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.R11A_Compensation__c.label}"/>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.R11A_Compensation__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.R11A_Compensation__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.R11A_Name2__c.label}"/>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.R11A_Name2__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.R11A_Name2__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.R11A_Title2__c.label}"/>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.R11A_Title2__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.R11A_Title2__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.R11A_Compensation2__c.label}"/>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.R11A_Compensation2__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.R11A_Compensation2__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.R11A_Name3__c.label}"/>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.R11A_Name3__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.R11A_Name3__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.R11A_Title3__c.label}"/>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.R11A_Title3__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.R11A_Title3__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.R11A_Compensation3__c.label}"/>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.R11A_Compensation3__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.R11A_Compensation3__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R11B__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.R11B__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.R11B__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R11Ba__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.R11Ba__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.R11Ba__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R11C__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.R11C__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.R11C__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R11D__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.R11D__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.R11D__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="field-title">
+                    <apex:outputText >{!$Label.Non_Profit_Donors}</apex:outputText>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R12_A__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.R12_A__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.R12_A__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R12_Aa__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.R12_Aa__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.R12_Aa__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="field-title">
+                    <apex:outputText >{!$Label.R1}</apex:outputText>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.R12B_Name__c.label}"/>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.R12B_Name__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.R12B_Name__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.R12B_Amount__c.label}"/>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.R12B_Amount__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.R12B_Amount__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.R12B_Name2__c.label}"/>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.R12B_Name2__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.R12B_Name2__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.R12B_Amount2__c.label}"/>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.R12B_Amount2__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.R12B_Amount2__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.R12B_Name3__c.label}"/>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.R12B_Name3__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.R12B_Name3__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.R12B_Amount3__c.label}"/>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.R12B_Amount3__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.R12B_Amount3__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="field-title">
+                    <apex:outputText >{!$Label.Government_Grants}</apex:outputText>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.R13_Name__c.label}"/>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.R13_Name__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.R13_Name__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.R13_Amount__c.label}"/>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.R13_Amount__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.R13_Amount__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.R13_Name2__c.label}"/>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.R13_Name2__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.R13_Name2__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.R13_Amount2__c.label}"/>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.R13_Amount2__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.R13_Amount2__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.R13_Name3__c.label}"/>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.R13_Name3__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.R13_Name3__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.R13_Amount3__c.label}"/>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.R13_Amount3__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.R13_Amount3__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="field-title">
+                    <apex:outputText >{!$Label.Signatures }</apex:outputText>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R14_Name__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.R14_Name__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.R14_Name__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R14_Title__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.R14_Title__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.R14_Title__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R14_Email__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.R14_Email__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.R14_Email__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R14_Name_2__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.R14_Name_2__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.R14_Name_2__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R14_Title_2__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.R14_Title_2__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.R14_Title_2__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R14_Email_2__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.R14_Email_2__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.R14_Email_2__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+            <div class="grid-container">
+                <div class="field-title">
+                    <apex:outputText >{!$Label.Organization_Documents }</apex:outputText>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.X15_1_Articles_of_Incorporation_Changes__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.X15_1_Articles_of_Incorporation_Changes__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.X15_1_Articles_of_Incorporation_Changes__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.X15_2_Bylaws_Changes__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.X15_2_Bylaws_Changes__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.X15_2_Bylaws_Changes__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container" style="{!IF((rcsr.client__r.Update_Ongoing_Status__c == false), 'display:block', 'display:none')}">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText >{!$Label.Organization_Documents_Upload }</apex:outputText>
+                    </div>
+                    <div class="input-field files">
+                        <apex:inputfile value="{!rfile14.body}" filename="{!rfile14.Name}" /> <br/>
+                <apex:inputfile value="{!rfile15.body}" filename="{!rfile15.Name}" /> <br/>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="grid-container">
+                <div class="field-title">
+                    <apex:outputText >{!$Label.Purpose }</apex:outputText>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.X16_Changes__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.X16_Changes__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.X16_Changes__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+             <div class="grid-container">
+                <div class="field-title">
+                    <apex:outputText >{!$Label.Programs }</apex:outputText>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.X17_Changes__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.X17_Changes__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.X17_Changes__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="field-title">
+                    <apex:outputText >{!$Label.Use_of_Fund }</apex:outputText>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Renewal_CSR__c.fields.X18_Changes__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!rcsr.X18_Changes__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!rcsr.X18_Changes__c}" rendered="{!(rcsr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div align="center" draggable="false" id="ct2" style="{!IF((rcsr.client__r.Update_Ongoing_Status__c == false), 'display:block', 'display:none')}">
+                <br/><br/>
+                <apex:commandButton action="{! cancel }"  value="Back"/> 
+                <apex:commandbutton value="Save" action="{!Saveto}"/>
+                <!-- <apex:commandButton action="{! Saveto }" value="Save" rerender="showmsg"/>   -->
+            </div>
+            <div align="center" draggable="false" id="ct2" style="{!IF((rcsr.client__r.Update_Ongoing_Status__c == true), 'display:block', 'display:none')}">
+                <br/><br/>
+                <!--button type="button" onclick="window.print();">Print</button-->
+                <input id="printpagebutton" type="button" value="Print" onclick="printpage()"/>
+            </div>
+        </apex:pageBlock>
+    </apex:form>
+<script>
+    function printpage() {
+        //Get the print button and put it into a variable
+        var printButton = document.getElementById("printpagebutton");
+        //Set the print button visibility to 'hidden' 
+        printButton.style.visibility = 'hidden';
+        //Print the page content
+        window.print()
+        printButton.style.visibility = 'visible';
+    }
+    </script>
+</apex:page>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>F_Other_revenue__c</fullName>
+    <externalId>false</externalId>
+    <formula>a_Total_Revenue__c -( D_Gross_Public_support_contributions__c + E_Government_grants_membership_dues__c )</formula>
+    <label>F) Other revenue:</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

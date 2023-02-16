@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Compensation_Information__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>24.   If not listed on Form 990, please provide the names and titles of the organization’s five highest paid officers or employees and their total annual compensation.</inlineHelpText>
+    <label>Compensation Information</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

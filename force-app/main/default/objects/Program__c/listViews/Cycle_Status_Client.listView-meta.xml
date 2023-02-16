@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cycle_Status_Client</fullName>
+    <columns>Client__c</columns>
+    <columns>Client_Code__c</columns>
+    <columns>NAME</columns>
+    <columns>Status_Record__c</columns>
+    <columns>Next_Due_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>Cycle Status</label>
+</ListView>

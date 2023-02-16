@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Amt_org_receive_from_govt_grants__c</fullName>
+    <externalId>false</externalId>
+    <formula>Program__r.X1e_Government_Grants__c</formula>
+    <inlineHelpText>26. Amount organisation receive from governament grants or private foundations</inlineHelpText>
+    <label>26.Amt org receive from govt. grants</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

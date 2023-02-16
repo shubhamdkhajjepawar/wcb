@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X7_Total_revenue__c</fullName>
+    <externalId>false</externalId>
+    <formula>X1_Public_contributions__c + X2_Government_grants__c + X3_Program_service_revenue__c + X4_Special_events_and_activities__c + X5_Gross_sales_of_inventory__c + X6_Other_revenue__c</formula>
+    <label>7. Total revenue:</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

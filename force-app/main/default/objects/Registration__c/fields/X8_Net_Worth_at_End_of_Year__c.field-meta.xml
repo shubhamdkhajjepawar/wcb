@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X8_Net_Worth_at_End_of_Year__c</fullName>
+    <externalId>false</externalId>
+    <formula>X5_Excess_or_Deficit__c + Beginning_of_Year_Net_Assets__c + Other_changes_in_net_assets_fund_balance__c</formula>
+    <label>8. Net Worth at End of Year:</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

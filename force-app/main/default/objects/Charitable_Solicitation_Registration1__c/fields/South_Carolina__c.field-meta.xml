@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>South_Carolina__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>f.  South Carolina:  Does the institution use fundraising counsel, professional solicitors, or commercial co-venturers in connection with solicitations in South Carolina?</inlineHelpText>
+    <label>South Carolina</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

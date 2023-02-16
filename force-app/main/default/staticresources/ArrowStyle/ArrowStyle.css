@@ -1,0 +1,9 @@
+
+.slds-accordion__summary-heading > button > lightning-primitive-icon > svg {
+
+fill:#ce0c88 !important;
+}
+
+.slds-accordion__summary-heading {
+    font-size: var(--lwc-fontSize7,1.25rem);
+}

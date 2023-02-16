@@ -1,0 +1,58 @@
+<!--
+  @description       : 
+  @author            : Dinesh S
+  @group             : 
+  @last modified on  : 06-13-2022
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+
+    <form>
+
+     <div class="main-container slds-grid slds-grid_vertical">
+        <!-- <div class="errorval">
+            <template if:true={errorCheck}>
+                <p> Your login attempt has failed. Make sure the username and password are correct.!</p>
+            </template>
+        </div>
+         <div class="slds-col slds-var-p-top_small">                
+             <div class="slds-form-element">
+                 <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left">
+                     <lightning-icon class="input-icon" icon-name="utility:user" alternative-text="username" size="xx-small"></lightning-icon>
+                     <input type="text" data-id="inputUsername" placeholder="Username" class="slds-input input-element" onchange={handleUserNameChange} required />
+                 </div>
+             </div>
+         </div>
+
+         <div class="slds-col slds-var-p-top_small">               
+             <div class="slds-form-element">
+                 <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left">
+                     <lightning-icon class="input-icon" icon-name="utility:lock" alternative-text="username" size="xx-small"></lightning-icon>
+                     <input type="password" data-id="inputPassword" placeholder="Password" class="slds-input input-element" onchange={handlePasswordChange} required/>
+                 </div>
+             </div>
+         </div> -->
+
+         <div class="slds-col slds-var-p-top_small">               
+            <div class="slds-form-element">
+                <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left">
+                    <!-- <iframe src={navigateTo} name="captchaFrame" onload={captchaLoaded} style="width: -webkit-fill-available;"></iframe> -->
+                    <iframe src={navigateTo} name="captchaFrame" onload={captchaLoaded} scrolling="no" height="12"></iframe>
+                    <!-- <iframe class="grecaptcha-badge" src="/apex/testdata" name="captchaFrame" onload={captchaLoaded} width="324" height="100" scrolling="no"></iframe> -->
+                </div>
+            </div>
+        </div>
+
+         <!-- <div class="slds-col slds-var-p-top_small">
+
+             <button type="submit" class="login-button slds-button" style="background-color: #002843 !important;" onclick={handleLogin}>LogIn</button>
+         </div>
+
+         <div class="slds-col slds-var-p-top_small">
+             <a href="/s/login/ForgotPassword" class="forgot-password-text">Forgot your password?</a>
+         </div> -->
+
+     </div>
+
+     </form>
+</template>

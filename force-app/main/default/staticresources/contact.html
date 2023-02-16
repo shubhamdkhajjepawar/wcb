@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <style>
+
+            #my-form > .row > .col-md-12 > input {
+                width: 100%;
+                margin: 17px 0;
+                padding: 9px 0 9px 0;
+                border: none;
+                 background: none;
+                border-bottom: 1px solid #ccc;
+            }
+            #myBtn{
+                width: 100%;
+                margin-top: 5px;
+                margin-bottom: 15px;
+                color: var(--lwc-colorTextButtonBrand,#FFFFFF);
+                cursor: pointer;
+                background-color: #002843 !important;
+                display: inline-block;
+                text-align: center;
+                vertical-align: middle;
+                background-image: none;
+                border: 1px solid transparent;
+                white-space: nowrap;
+                padding: 20px 12px !important;
+                font-size: 16px;
+                font-family: var(--lwc-fontFamily,Ek Mukta);
+                font-weight: 700;
+                line-height: 1.42857143;
+                border-radius: 2px;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                outline: none;
+            }
+            #my-form > .row > .col-md-12 > input:focus {
+                outline: none;
+            }
+            #demo{
+                font-family: 'Roboto', san-serif;
+            }
+            #demo {
+                font-family: 'Roboto', san-serif;
+            }
+        </style>
+    </head>
+<body>
+    <form id="my-form" action="enquiry.php" method="post" name="contactform" autocomplete="off">
+        <div class="row">
+        <div class="col-md-12">
+          <input name="fname" type="name" placeholder="Name*" required>
+        </div>
+        <div class="col-md-12">
+            <input name="fname" type="name" placeholder="Name*" required>
+        </div>
+        <div class="col-md-12">
+          <input name="email" type="email" placeholder="Email id*" required>
+        </div>
+        <div class="col-md-12">
+          <input name="fphone" type="number" placeholder="Phone No*" required oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="10">
+        </div>
+        <div class="col-md-12">
+          <input type="text" placeholder="Location"  name="loc" >
+        </div>
+    </div>
+      </form>
+      <div class="col-md-12"></div>
+        <button id="myBtn">Contact Us</button>
+        <p ><span id="demo"></span></p>
+<script>
+const element = document.getElementById("myBtn");
+element.addEventListener("click", function() {
+  document.getElementById("demo").innerHTML = "ThankYou";
+});
+</script>
+
+</body>
+</html>

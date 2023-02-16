@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Cycle Status</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Cycle Status</value>
+    </caseValues>
+    <layouts>
+        <layout>Customer user Layout</layout>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Program Layout</layout>
+        <sections>
+            <label></label>
+            <section>Changes to assets or fund balances - Page 12</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Compensation of Officers - Page 8</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>IRS 990 - Front Page</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Net assets or fund balances - Page 11</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Schedule D</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Schedule G - PFR - Total Amounts</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Statement of Functional Expenses - Page 10</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Statement of Revenue - Page 9</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>System Information</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label></label>
+        <name>Create_Registration</name>
+    </quickActions>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label></label>
+        <name>Create_Registration</name>
+    </webLinks>
+</CustomObjectTranslation>

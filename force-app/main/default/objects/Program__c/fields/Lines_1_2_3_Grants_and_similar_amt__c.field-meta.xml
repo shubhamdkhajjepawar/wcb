@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lines_1_2_3_Grants_and_similar_amt__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Lines 1, 2 &amp; 3: Grants and similar amounts paid:</inlineHelpText>
+    <label>Lines 1, 2 &amp; 3: Grants and similar amt</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

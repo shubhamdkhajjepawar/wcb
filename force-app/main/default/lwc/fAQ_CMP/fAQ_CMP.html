@@ -1,0 +1,39 @@
+<template>
+    <div class="test">
+    </div>
+       <h2> <p class="header-uppercase-4 slds-text-align_center slds-m-top_xx-large slds-m-bottom_xx-large banner-m-top">
+           <strong>Frequently asked questions</strong></p></h2><br/><br/>
+           <div class="slds-p-left_xx-large faq-cmp fq slds-p-right_xx-large">
+            <ul class="slds-accordion cmp-faq">
+                <!--It iterate the knowledge records -->
+                <template for:each={mapOfValues} for:item="records" for:index="i">
+                    <!--template if:true={showlist}-->
+                        <!--It display the Type-->
+                        <!--h2 key={records.key}><p  key={records.key} class="header-uppercase-4 slds-p-top_large slds-text-align_left section-heading"><strong>{records.key}</strong></p></h2-->
+                        <!--It iterate over the records which comes under the type-->
+                        <template for:each={records.value} for:item="rec">
+                            <li key={rec.Id} class="slds-accordion__list-item">
+                                <section class="slds-accordion__section slds-is-open">
+                                    <div class="slds-accordion__summary">
+                                        <h2 class="slds-accordion__summary-heading">
+                                            <button data-header={rec.Id} class="slds-button slds-button_reset slds-accordion__summary-action accordion-icon-collapsed" title={rec.Title} onclick={handleExpandCollapse}>
+                                                <!--span class="slds-accordion__summary-content slds-p-left_x-small">{rec.Title}</span-->
+                                                <span class="slds-accordion__summary-content slds-p-left_x-small">{rec.	Question__c}</span>
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div data-body={rec.Id} class="collapsed" data-id={rec.Id}>
+                                        <lightning-formatted-rich-text value={rec.Answer__c}></lightning-formatted-rich-text>
+                                    </div>
+                                </section>
+                            </li>
+                        </template>
+                    <!--/template-->
+                   
+
+                </template>
+                </ul>
+                </div>
+                
+    
+</template>

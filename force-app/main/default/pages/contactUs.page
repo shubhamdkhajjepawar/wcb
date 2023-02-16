@@ -1,0 +1,39 @@
+<apex:page >
+<html>
+<body>
+
+ <form id="my-form" action="" method="post" name="contactform" autocomplete="off">
+                      
+                      <div class="col-12">
+                        <input name="fname" type="name" placeholder="First Name*" />
+                      </div>
+                      <div class="col-12">
+                        <input name="fname" type="name" placeholder="Last Name*" />
+                      </div>
+                      <div class="col-12">
+                        <input name="email" type="email" placeholder="Email id*" />
+                      </div>
+                      <div class="col-12">
+                        <input name="fphone" type="number" placeholder="Phone No*" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="10" />
+                      </div>
+                      <div class="col-12">
+                        <input type="text" placeholder="Organization"  name="loc" />
+                      </div>            
+                    </form>
+                      <div class="col-12">
+                        <p>Attach a click event to a button:</p>
+                      <button id="myBtn">Try it</button>
+                      <p id="demo"></p>
+                      </div>
+                      
+
+<script>
+const element = document.getElementById("myBtn");
+element.addEventListener("click", function() {
+  document.getElementById("demo").innerHTML = "Hello World";
+});
+</script>
+
+</body>
+</html>
+</apex:page>

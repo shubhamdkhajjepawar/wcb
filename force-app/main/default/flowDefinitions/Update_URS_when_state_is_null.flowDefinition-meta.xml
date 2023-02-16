@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>12</activeVersionNumber>
+    <description>Update dynamic actions according to selected state values else URS true.</description>
+    <masterLabel>Update URS when state is null</masterLabel>
+</FlowDefinition>

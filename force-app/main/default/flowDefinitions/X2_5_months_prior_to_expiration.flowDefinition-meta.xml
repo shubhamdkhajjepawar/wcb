@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Send Email Alert to client according to scheduled time.</description>
+    <masterLabel>Send Email Alerts to client</masterLabel>
+</FlowDefinition>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Signatures__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>The registration forms must be signed by one of the organization’s executive officers/directors (e.g. CEO, Chairman, President, Executive Director, etc.) and the organization’s chief fiscal officer (e.g. CFO, Treasurer, VP of Finance, etc.). Please review the listed signers and update as necessary. For purposes of Mississippi, e-mail addresses are required as the filing will need to be electronically signed (instructions will be provided separately).</inlineHelpText>
+    <label>Signatures</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

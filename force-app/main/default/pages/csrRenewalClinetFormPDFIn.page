@@ -1,0 +1,652 @@
+<apex:page controller="csrRenewalClientFormPDF" renderAs="PDF" >
+        <head>
+            <link rel="preconnect" href="https://fonts.googleapis.com" />
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin " />
+            <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        </head>
+        <style>
+            body{
+            font-family: 'Raleway', sans-serif !important;
+            color:#000;
+            background: white !important;
+            }
+            p{
+            font-family: 'Raleway', sans-serif;
+            }
+            .field-title.head {
+            font-size: 1.3rem;
+            color: #000;
+            text-transform: uppercase;
+            font-weight: 500;
+            text-align: center;
+            line-height: 35px;
+            letter-spacing: 2px;
+            }
+            p.head {
+            color: #002943;
+            font-weight: 600;
+            text-align: center;
+            line-height: 35px;
+            font-size: 16px !important;
+            }
+            table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            }
+
+            td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+            width:50%;
+            }
+
+            tr:nth-child(even) {
+            background-color: #dddddd;
+            }
+            table.multiSelectPicklistTable{
+            width:100%;
+            }
+            tr.multiSelectPicklistRow {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            }
+            .input-field.files > input {
+            background: none !important;
+            border:0px solid #ccc !important;
+            }
+            
+            .grid.flex-box > .input-field {
+            width: 100%;
+            }
+            select#j_id0\:theForm1\:pb2\:j_id259_unselected {
+            width: 100% !important;
+            }
+            select#j_id0\:theForm1\:pb2\:j_id259_selected{
+            width: 100% !important;
+            }
+            .grid.flex-box {
+            display: flex;
+            flex-direction: column;
+            align-content: flex-start;
+            align-items: flex-start;
+            }
+            select {
+            cursor: pointer !important;
+            }
+            select * {
+            cursor: pointer !important;
+            }
+            option {
+            cursor: pointer !important;
+            }
+            .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            column-gap: 20px;
+            word-break: break-word;
+            }
+            input, textarea{
+            padding: 12px 9px !important;
+            }
+            input, textarea, select {
+            width: 100%;
+            background: white !important;
+            padding: 12px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc !important;
+            outline: none !important;
+            }
+            input, textarea, select:focus{
+            border:1px solid #ccc !important;
+            outline: none !important;
+            }
+            input, textarea, select:active{
+            border:1px solid #ccc !important;
+            outline: none !important;
+            }
+            input#j_id0\:theForm1\:pb3\:j_id63{
+            border:1px solid #ccc !important;
+            }
+            textarea#j_id0\:theForm1\:pb3\:j_id59{
+            border:1px solid #ccc !important;
+            outline: none !important;
+            }
+            textarea#j_id0\:theForm1\:pb3\:j_id59:focus{
+            border:1px solid #ccc !important;
+            outline: none !important;
+            }
+            textarea#j_id0\:theForm1\:pb3\:j_id59:active{
+            border:1px solid #ccc !important;
+            outline: none !important;
+            }
+            .input-field.files > input:focus{
+            border:1px solid #ccc !important;
+            }
+            .center {
+            text-align: center;
+            }
+            .field-title {
+            font-size: 16px;
+            line-height: 24px;
+            color: #000;
+            }
+            .grid-container {
+            width: 70%;
+            margin: 28px auto;
+            }
+            #ct2 {
+            display: flex;
+            justify-content: center;
+            column-gap: 20px;
+            }
+            form#j_id0\:theForm1 {
+            border: 0 !important;
+            background: none !important;
+            }
+            div#j_id0\:theForm1\:pb2 {
+            background: #fff0 !important;
+            border: 0 !important;
+            }
+            h1 {
+            text-align: center;
+            color: #3495b2;
+            margin-bottom: 0;
+            display: block;
+            font-size: 1.5rem;
+            }
+            h3 {
+            text-align: center;
+            margin-top: 3px;
+            margin-bottom: 26px;
+            display: block;
+            font-size: 1rem;
+            line-height: 23px;
+            }
+            html .brandSecondaryBrd {
+            border-color: #51606e00!important;
+            }
+            body.hasMotif.accountTab.sfdcBody.brandQuaternaryBgr {
+            background: #f5f7fa !important;
+            border: 0 !important;
+            }
+            input.btn {
+            background: #3495b2 !important;
+            text-align: center !important;
+            font-size: 16px !important;
+            font-weight: 500;
+            width: 150px !important;
+            border-radius: 0 !important;
+            padding: 0 !important;
+            color: #fff !important;
+            height: 40px;
+            font-family: 'Raleway', sans-serif;
+            }
+            .text-field {
+            font-size: 16px;
+            line-height: 24px;
+            font-family: 'Raleway', sans-serif;
+            }
+            input.btn:hover {
+            background: #b09a51 !important;
+            }
+            button:hover{
+                background: #b59a63 !important;
+                cursor:pointer;
+            }
+        </style>
+        <Body>
+            
+            
+            <apex:form id="theForm1" style="border-style:solid;border-width:2px;
+                                            border-color:black;background-image:linear-gradient(to right, #ffffff , #ffffff);margin-left:0px">
+                <apex:pageBlock id="pb3" >
+                    
+
+
+                    <table style="width: 100%;" cellpadding="10">
+                        <tr style="padding: 10px; background:#ededed;width:100%;">
+                            <th style="width:100%;"><apex:outputText >{!$Label.Directions}</apex:outputText></th>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;width:100%;">
+                            <th style="width:100%;"><apex:outputText >{!$Label.Charity_Contact_Information}</apex:outputText></th>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;">
+                            <td ><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.Primary_Address__CountryCode__s.Label}" style="width:50%;"></apex:outputText></td>
+                            <td ><apex:outputField value="{!rcsr.Primary_Address__CountryCode__s}"/></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.Primary_Address__CountryCode__s.Label}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.Primary_Address__CountryCode__s}"/></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.Primary_Address__Street__s.Label}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.Primary_Address__Street__s}"/></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.Primary_Address__City__s.Label}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.Primary_Address__City__s}"/></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.Primary_Address__StateCode__s.Label}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.Primary_Address__StateCode__s }"/></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.Primary_Address__PostalCode__s.Label}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.Primary_Address__PostalCode__s }" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.Mailing_Address__CountryCode__s.Label}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.Mailing_Address__CountryCode__s}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.Mailing_Address__Street__s.Label}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.Mailing_Address__Street__s}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.Mailing_Address__City__s.Label}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.Mailing_Address__City__s}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.Mailing_Address__StateCode__s.Label}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.Mailing_Address__StateCode__s }" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.Mailing_Address__PostalCode__s.Label}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.Mailing_Address__PostalCode__s }" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.Phone__c.Label}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.Phone__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.Fax__c.Label}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.Fax__c }" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.Email__c.Label}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.Email__c }" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.Website__c.Label}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.Website__c }" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.X4_Changes__c.InlineHelpText}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.X4_Changes__c }" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;width:100%;">
+                            <th style="width:100%;"><apex:outputText style="width:100%;">{!$Label.Other_Names}</apex:outputText></th>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R5_a__c.InlineHelpText}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R5_a__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;width:100%;">
+                            <th style="width:100%;"><apex:outputText style="width:100%;">{!$Label.Professional_Fundraisers_and_Commercial_Co_Venturer}</apex:outputText></th>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.X6_1_If_Yes__c.InlineHelpText}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.X6_1_If_Yes__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R6_1_Name__c.InlineHelpText}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R6_1_Name__c}"/></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <td style="width:100%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R6_2_Address_c__c.Label}"></apex:outputText></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R6_2_Address_c__CountryCode__s.Label}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R6_2_Address_c__CountryCode__s}"/></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R6_2_Address_c__Street__s.Label}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R6_2_Address_c__Street__s}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R6_2_Address_c__City__s.Label}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R6_2_Address_c__City__s}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R6_2_Address_c__StateCode__s .Label}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R6_2_Address_c__StateCode__s  }" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R6_2_Address_c__PostalCode__s .Label}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R6_2_Address_c__PostalCode__s  }" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R6_3_Phone_Number__c.InlineHelpText}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R6_3_Phone_Number__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R6_1_4__c.InlineHelpText}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R6_1_4__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R6_1_5__c.InlineHelpText}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R6_1_5__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R6_1_6__c.InlineHelpText}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R6_1_6__c}"/></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R6_2__c.InlineHelpText}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R6_2__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.Currently_providing_services__c.InlineHelpText}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R6_4__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R6_5__c.InlineHelpText}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R6_5__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R6_6__c.InlineHelpText}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R6_6__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <th style="width:50%;"><apex:outputText >{!$Label.Methods_of_Solicitation}</apex:outputText></th>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.Methods_of_Solicitation__c.InlineHelpText}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.Methods_of_Solicitation__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.X7_Changes__c.InlineHelpText}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.X7_Changes__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.Employees_of_the_organization__c.InlineHelpText}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.Employees_of_the_organization__c}"/></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.Volunteers__c.InlineHelpText}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.Volunteers__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;">
+                            <th style="width:50%;"><apex:outputText >{!$Label.Responsible_Persons}</apex:outputText></th>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <td style="width:50%;"><apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.Authorized_to_Sign_Checks__c.label}"/></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.Authorized_to_Sign_Checks__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;">
+                            <td style="width:50%;"><apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.Budget_Approval__c.label}"/></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.Budget_Approval__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <td style="width:50%;"><apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.Custody_of_Financial_Records__c.label}"/></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.Custody_of_Financial_Records__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;">
+                            <td style="width:50%;"><apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.Custody_of_Funds__c.label}"/></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.Custody_of_Funds__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <td style="width:50%;"><apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.Distribution_of_Funds__c.label}"/></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.Distribution_of_Funds__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;">
+                            <td style="width:50%;"><apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.Fund_Raising_Activities__c.label}"/></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.Fund_Raising_Activities__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <td style="width:50%;"><apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.X8_Changes__c.label}"/></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.X8_Changes__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;">
+                            <th style="width:100%;"><apex:outputText >{!$Label.Banks}</apex:outputText></th>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <td style="width:50%;"><apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.Banks__c.label}"/></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.Banks__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.X9_Changes__c.InlineHelpText}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.X9_Changes__c}"/></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <th style="width:100%;"><apex:outputText >{!$Label.State_Specific_Funds}</apex:outputText></th>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;">
+                            <th style="width:100%;"><apex:outputText >{!$Label.X10_state_Specific_Funds_A}</apex:outputText></th>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <td style="width:50%;"><apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.R10A_Minnesota__c.label}"/></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R10A_Minnesota__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R10A_North_Dakota__c.label}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R10A_North_Dakota__c}"/></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <td style="width:50%;"><apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.R10A_Ohio__c.label}"/></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R10A_Ohio__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R10A_Oregon__c.label}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R10A_Oregon__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <td style="width:50%;"><apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.R10A_Utah__c.label}"/></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R10A_Utah__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R10A_West_Virginia__c.label}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R10A_West_Virginia__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R10B__c.InlineHelpText}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R10B__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;">
+                            <th style="width:100%;"><apex:outputText >{!$Label.Board_of_Directors}</apex:outputText></th>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <th style="width:100%;"><apex:outputText >{!$Label.R11A}</apex:outputText></th>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R10A_West_Virginia__c.label}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R10A_West_Virginia__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <td style="width:50%;"><apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.R11A_Name__c.label}"/></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R11A_Name__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;">
+                            <td style="width:50%;"><apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.R11A_Title__c.label}"/></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R11A_Title__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <td style="width:50%;"><apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.R11A_Compensation__c.label}"/></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R11A_Compensation__c}"/></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;">
+                            <td style="width:50%;"><apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.R11A_Name2__c.label}"/></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R11A_Name2__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <td style="width:50%;"><apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.R11A_Title2__c.label}"/></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R11A_Title2__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;">
+                            <td style="width:50%;"><apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.R11A_Compensation2__c.label}"/></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R11A_Compensation2__c}"/></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <td style="width:50%;"><apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.R11A_Name3__c.label}"/></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R11A_Name3__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;">
+                            <td style="width:50%;"><apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.R11A_Title3__c.label}"/></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R11A_Title3__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <td style="width:50%;"><apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.R11A_Compensation3__c.label}"/></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R11A_Compensation3__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R11B__c.InlineHelpText}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R11B__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R11Ba__c.InlineHelpText}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R11Ba__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R11C__c.InlineHelpText}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R11C__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R11C__c.InlineHelpText}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R11C__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R11D__c.InlineHelpText}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R11D__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <th style="width:100%;"><apex:outputText >{!$Label.Non_Profit_Donors}</apex:outputText></th>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R12_A__c.InlineHelpText}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R12_A__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R12_Aa__c.InlineHelpText}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R12_Aa__c}"/></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;">
+                            <th style="width:100%;"><apex:outputText >{!$Label.R1}</apex:outputText></th>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <td style="width:50%;"><apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.R12B_Name__c.label}"/></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R12B_Name__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;">
+                            <td style="width:50%;"><apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.R12B_Name2__c.label}"/></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R12B_Name2__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <td style="width:50%;"><apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.R12B_Amount2__c.label}"/></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R12B_Amount2__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;">
+                            <td style="width:50%;"><apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.R12B_Name3__c.label}"/></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R12B_Name3__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <td style="width:50%;"><apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.R12B_Amount2__c.label}"/></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R12B_Amount2__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;">
+                            <td style="width:50%;"><apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.R12B_Amount3__c.label}"/></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R12B_Amount3__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <th style="width:100%;"><apex:outputText >{!$Label.Government_Grants}</apex:outputText></th>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;">
+                            <td style="width:50%;"><apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.R13_Name__c.label}"/></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R13_Name__c}"/></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <td style="width:50%;"><apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.R13_Amount__c.label}"/></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R13_Amount__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;">
+                            <td style="width:50%;"><apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.R13_Name2__c.label}"/></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R13_Name2__c}"/></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <td style="width:50%;"><apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.R13_Amount2__c.label}"/></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R13_Amount2__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;">
+                            <td style="width:50%;"><apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.R13_Name3__c.label}"/></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R13_Name3__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <td style="width:50%;"><apex:outputLabel value="{!$objectType.Renewal_CSR__c.fields.R13_Amount3__c.label}"/></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R13_Amount3__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;">
+                            <th style="width:100%;"><apex:outputText >{!$Label.Signatures }</apex:outputText></th>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R14_Name__c.InlineHelpText}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R14_Name__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R14_Title__c.InlineHelpText}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R14_Title__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R14_Email__c.InlineHelpText}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R14_Email__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R14_Name_2__c.InlineHelpText}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R14_Name_2__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R14_Title_2__c.InlineHelpText}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R14_Title_2__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.R14_Email_2__c.InlineHelpText}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.R14_Email_2__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;">
+                            <th style="width:100%;"><apex:outputText >{!$Label.Organization_Documents }</apex:outputText></th>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.X15_1_Articles_of_Incorporation_Changes__c.InlineHelpText}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.X15_1_Articles_of_Incorporation_Changes__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.X15_2_Bylaws_Changes__c.InlineHelpText}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.X15_2_Bylaws_Changes__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.X15_2_Bylaws_Changes__c.InlineHelpText}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.X15_2_Bylaws_Changes__c}" /></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;">
+                            <th style="width:100%;"><apex:outputText >{!$Label.Purpose }</apex:outputText></th>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.X16_Changes__c.InlineHelpText}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.X16_Changes__c}" /></td>
+                        </tr>
+                        
+                        <tr style="padding: 10px; background:#ededed;">
+                            <th style="width:100%;"><apex:outputText >{!$Label.Programs }</apex:outputText></th>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.X17_Changes__c.InlineHelpText}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.X17_Changes__c}"/></td>
+                        </tr>
+                        <tr style="padding: 10px; background:#ededed;">
+                            <th style="width:100%;"><apex:outputText >{!$Label.Use_of_Fund }</apex:outputText></th>
+                        </tr>
+                        <tr style="padding: 10px; background:#fff;">
+                            <td style="width:50%;"><apex:outputText value="{!$objectType.Renewal_CSR__c.fields.X18_Changes__c.InlineHelpText}"></apex:outputText></td>
+                            <td style="width:50%;"><apex:outputField value="{!rcsr.X18_Changes__c}" /></td>
+                        </tr>
+                    </table>
+                    
+                </apex:pageBlock>
+            </apex:form>
+        </Body>
+    </apex:page>

@@ -1,0 +1,81 @@
+body {
+    background-size: cover;    
+    background-image: url("/resource/loginBackground"); /*choose image from static resource*/
+}
+
+.center {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grecaptcha-badge{
+    visibility: visible !important;
+   z-index: 9999999999; 
+} 
+
+.login-button {
+
+    background-color: #002843 !important;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    width: 100%;
+    display: block;
+    padding: 0.5rem;
+    font-size: 16px;
+    font-family: Arial;
+}
+
+.main-heading {
+
+    font-size: 20px;
+    color: rgb(10, 1, 1);
+}
+
+.sub-heading {
+
+    font-size: 14px;
+    color: rgb(11, 2, 2);
+}
+
+.input-icon {
+
+    position: absolute;
+    margin: 0.9rem 0.7rem;
+}
+
+.input-element {
+
+    padding: 0.5rem 0rem 0.5rem 2rem;
+    font-size: 16px;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.forgot-password-text {
+
+    color: #0f0101;
+    font-size: 14px;
+    text-align: left;
+}
+
+.register-text {
+
+    color: #0b0101;
+    font-size: 14px;
+    float: right;
+}
+.errorval{
+    color: #980606;
+}
+
+.error {
+
+    text-align: center;
+    word-break: break-word;
+    max-width: 20rem;
+    color: #ff9e9e;
+}

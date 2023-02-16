@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help></help>
+    <label></label>
+    <name>States_where_registered__c</name>
+    <picklistValues>
+        <masterLabel>a. Is currently registered and allowed to solicit funds</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>b. Is registered, but its registration is suspended because the state has asked questions about the most recent registration renewal</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>c. Was registered, but is not registered now. Please explain why the organization is not registered now (e.g., withdrawal, suspension, failure to file renewal)</masterLabel>
+        <translation></translation>
+    </picklistValues>
+</CustomFieldTranslation>

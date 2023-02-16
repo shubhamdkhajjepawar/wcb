@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>R5_b__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>If yes, please list them and provide any copies of DBA or trade name registrations.</inlineHelpText>
+    <label>R5(b)</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X20_d__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Is any owner, director, officer or employee of a professional fundraiser listed above also a director, officer or employee (or related to a director, officer, or employee) of the organization? If so, please provide the name, title, and employer of each individual, and describe the relationship.</inlineHelpText>
+    <label>20(d) Related PFR</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

@@ -1,0 +1,1404 @@
+<apex:page standardController="Charitable_Solicitation_Registration1__c" extensions="csrNewClientController" lightningStylesheets="true" doctype="html-5.0"><!--extensions="csrNewClientController"-->
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin " />
+       <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+</head>
+  <style>
+    body{
+            font-family: 'Raleway', sans-serif;
+            color:#000;
+            background: white !important;
+        }
+        html body.sfdcBody{
+            background: #f5f7fa !important;
+        }
+        html .brandQuaternaryBgr {
+            background: #f5f7fa !important;
+        }
+        p{
+            font-family: 'Raleway', sans-serif;
+        }
+    table.multiSelectPicklistTable{
+        width:100%;
+    }
+    .input-field > span {
+    font-family: 'Raleway', sans-serif !important;
+    font-size: 16px;
+}
+    .field-title {
+        color: #000;
+        font-family: 'Raleway', sans-serif;
+        line-height: 35px;
+        font-weight:400 !important;
+        font-size: 16px !important;
+    }
+    td.multiSelectPicklistCell > a:after {
+        content: "Add";
+        background: #002843;
+        padding: 4px 14px;
+        color: #fff;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 600;
+        font-size: 15px;
+        letter-spacing: 1px;
+        border-radius: 2px;
+    }
+    td.multiSelectPicklistCell > a:last-child:after {
+        content: "Remove";
+        background: #002843;
+        padding: 4px 14px;
+        color: #fff;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 600;
+        font-size: 15px;
+        letter-spacing: 1px;
+        border-radius: 2px;
+    }
+    
+    td.multiSelectPicklistCell > a > img {
+        display: none;
+    }
+    td.multiSelectPicklistCell > a {
+        margin-bottom: 5px;
+        display: block;
+        margin-left: 9px;
+    }
+    
+    select {
+            cursor: pointer;
+        }
+    table.multiSelectPicklistTable{
+            width:100%;
+        }
+        tr.multiSelectPicklistRow {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+        }
+    .input-field.files > input {
+            background: none !important;
+            border:0px solid #ccc !important;
+     }
+    .grid.flex-box > .input-field {
+        width: 100%;
+    }
+    select#j_id0\:theForm1\:pb2\:j_id259_unselected {
+        width: 100% !important;
+    }
+    select#j_id0\:theForm1\:pb2\:j_id259_selected{
+        width: 100% !important;
+    }
+    .grid.flex-box {
+        display: flex;
+        flex-direction: column;
+        align-content: flex-start;
+        align-items: flex-start;
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        column-gap: 20px;
+        word-break: break-word;
+    }
+    input, textarea, select {
+        width: 100%;
+        background: white !important;
+        border: 0 !important;
+        padding: 12px 0;
+        border-radius: 4px;
+    }
+    input, textarea{
+        padding: 12px 9px !important;
+    }
+    .center {
+        text-align: center;
+    }
+    .grid-container {
+        width: 70%;
+        margin: 28px auto;
+    }
+    #ct2 {
+        display: flex;
+        justify-content: center;
+        column-gap: 20px;
+    }
+    form#j_id0\:theForm1 {
+        border: 0 !important;
+        background: none !important;
+    }
+    div#j_id0\:theForm1\:pb2 {
+        background: #fff0 !important;
+        border: 0 !important;
+    }
+    h1 {
+        text-align: center;
+        color: #3495b2;
+        margin-bottom: 0;
+        display: block;
+        font-size: 1.5rem;
+    }
+    h3 {
+        text-align: center;
+        margin-top: 3px;
+        margin-bottom: 26px;
+        display: block;
+        font-size: 1rem;
+        line-height: 23px;
+    }
+    html .brandSecondaryBrd {
+        border-color: #51606e00!important;
+    }
+    body.hasMotif.accountTab.sfdcBody.brandQuaternaryBgr {
+        background: #f5f7fa !important;
+        border: 0 !important;
+    }
+    option::before {
+        content: "";
+    }
+    button {
+        background: #2e94b1 !important;
+        padding: 15px 50px !important;
+        border-radius: 0 !important;
+        color: #fff !important;
+        border: 0 !important;
+        margin-bottom: 40px !important;
+        font-size: 16px !important;
+        font-family: 'Raleway' !important;
+        letter-spacing: 1px;
+    }
+    button:hover{
+                background: #b59a63 !important;
+                cursor:pointer;
+            }
+    .field-title {
+        color: #000;
+        font-family: 'Raleway', sans-serif;
+        line-height: 35px;
+        font-size: 16px !important;
+    }
+    input.btn {
+        background: #3495b2 !important;
+        text-align: center !important;
+        font-size: 16px !important;
+        font-weight: 500;
+        width: 150px !important;
+        border-radius: 0 !important;
+        padding: 0 !important;
+        color: #fff !important;
+        height: 40px;
+    }
+    .text-field {
+        font-size: 16px;
+        font-family: 'Raleway', sans-serif;
+        line-height: 24px;
+    }
+    .field-title.head {
+        color: #000;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 700 !important;
+        line-height: 35px;
+        font-size: 16px !important;
+    }
+    p.head {
+        font-size: 1.3rem;
+        color: #000;
+        font-family: 'Raleway', sans-serif;
+        text-align: center;
+        line-height: 35px;
+        font-size: 18px !important;
+    }
+    input.btn:hover {
+        background: #b09a51 !important;
+    }
+    select {
+            cursor: pointer;
+        }
+    input, textarea, select {
+        width: 100%;
+        background: white !important;
+        padding: 12px 0;
+        border-radius: 4px;
+        border: 1px solid #ccc !important;
+    }
+    input, textarea, select:focus{
+        border:1px solid #ccc !important;
+        outline: none !important;
+    }
+    input, textarea, select:active {
+        border: 1px solid #ccc !important;
+        outline: none !important;
+    }
+    tr.multiSelectPicklistRow {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+    tr.multiSelectPicklistRow > td {
+        margin-top: 20px;
+    }
+    td.multiSelectPicklistCell {
+        display: flex;
+        justify-content: center;
+    }
+    select#j_id0\:theForm1\:pb2\:j_id422_unselected {
+        width: 100% !important;
+    }
+    select#j_id0\:theForm1\:pb2\:j_id422_selected{
+        width: 100% !important;
+    }
+      input#printpagebutton {
+            width: 150px;
+            background: #3295b2 !important;
+            color: #fff !important;
+            font-size: 16px !important;
+            cursor: pointer;
+            font-family: 'Raleway', sans-serif !important;
+            font-weight:600;
+        }
+        input#printpagebutton:hover{
+                background: #b59a63 !important;
+                cursor:pointer;
+        }
+  </style>
+  <script>
+        const el = document.getElementById('j_id0:theForm1:pb2:j_id422_unselected');
+
+        const box = document.getElementById('j_id0:theForm1:pb2:j_id422_selected');
+        
+        el.addEventListener('change', function handleChange(event) {
+          if (event.target.value === '1') {
+            j_id0:theForm1:pb2:j_id422_selected.style.display = 'block';
+          } else {
+            j_id0:theForm1:pb2:j_id422_selected.style.display = 'none';
+          }
+        });
+  </script>
+    <apex:form id="theForm1" style="border-style:solid;border-width:2px;
+                                    border-color:black;background-image:linear-gradient(to right, #ffffff , #ffffff);margin-left:0px">
+        <apex:pageBlock id="pb2" ><!-- rendered="{!(csr.client__r.Ongoing_Cycle_Status__c == 0)}"-->
+            
+            <!-- <p style="margin-bottom:0;text-align:center;"><b><apex:outputText value="WEBSTER, CHAMBERLAIN & BEAN, LLP"></apex:outputText></b></p> 
+            <p style="margin-bottom:0;text-align:center;"><b><apex:outputText value="CHARITABLE SOLICITATION REGISTRATION"></apex:outputText></b></p>
+            <p style="margin-bottom:0;text-align:center;"><b><apex:outputText value="INFORMATION AND DOCUMENT QUESTIONNAIRE"></apex:outputText></b></p> <br/>
+            <p style="margin-bottom:0;text-align:left;"><b>Introduction: </b><apex:outputText >{!$Label.Introduction}</apex:outputText></p><br/>
+            <p style="margin-bottom:0;text-align:left;"><b>Instructions: </b><apex:outputText >{!$Label.Instruction}</apex:outputText></p><br/>
+            <p style="margin-bottom:0;text-align:left;"><b><apex:outputText value="A.   CORPORATE INFORMATION"></apex:outputText></b></p><br/>
+            <p style="margin-bottom:0;text-align:left;"><b><apex:outputText value="1.   Please provide the organization’s contact information:"></apex:outputText></b></p><br/> -->
+            <div class="grid-container">
+                <!-- <p style="margin-bottom:0;text-align:center;"><b><apex:outputText value="WEBSTER, CHAMBERLAIN & BEAN, LLP"></apex:outputText></b></p> 
+            <p style="margin-bottom:0;text-align:center;"><b><apex:outputText value="CHARITABLE SOLICITATION REGISTRATION"></apex:outputText></b></p>
+            <p style="margin-bottom:0;text-align:center;"><b><apex:outputText value="INFORMATION AND DOCUMENT QUESTIONNAIRE"></apex:outputText></b></p> <br/> -->
+            <h1>WEBSTER, CHAMBERLAIN &#38; BEAN, LLP</h1><br></br>
+            <h3>CHARITABLE SOLICITATION REGISTRATION<br></br>INFORMATION AND DOCUMENT QUESTIONNAIRE</h3>
+            <p style="margin-bottom:0;text-align:left;font-size: 1rem;line-height: 25px;"><b>Introduction: </b><apex:outputText >{!$Label.Introduction}</apex:outputText></p><br/>
+            <p style="margin-bottom:0;text-align:left;font-size: 1rem;line-height: 25px;"><b>Instructions: </b><apex:outputText >{!$Label.Instruction}</apex:outputText></p><br/>
+            <p class="head" style="margin-bottom:0;text-align:left;font-size: 1rem;line-height: 25px;"><b><apex:outputText value="A.   CORPORATE INFORMATION"></apex:outputText></b></p><br/>
+            <p class="head" style="margin-bottom:0;text-align:left;font-size: 1rem;line-height: 25px;"><apex:outputText value="1.   Please provide the organization’s contact information:"></apex:outputText></p>
+              </div>
+            <div class="grid-container">
+              <div class="grid">
+                  <div class="text-field">
+                      <apex:outputLabel value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.Name.label}"/>
+                  </div>
+                  <div class="input-field">
+                      <apex:inputField value="{!csr.Name}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                      <apex:outputField value="{!csr.Name}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                      
+                  </div>
+              </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputLabel value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.Mailing_Address1__c.label}"/>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.Mailing_Address1__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.Mailing_Address1__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputLabel value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.Street_Address1__c.label}"/>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.Street_Address1__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.Street_Address1__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputLabel value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.Phone_No__c.label}"/>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.Phone_No__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.Phone_No__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputLabel value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.Fax_No__c.label}"/>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.Fax_No__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.Fax_No__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputLabel value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.Website__c.label}"/>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.Website__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.Website__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputLabel value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.Email__c.label}"/>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.Email__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.Email__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputLabel value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.Other_Names__c.InlineHelpText}"/>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.Other_Names__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.Other_Names__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <!-- IRS Form 990:A  --> 
+            <div class="grid-container" style="{!IF((csr.client__r.Update_Ongoing_Status__c == false), 'display:block', 'display:none')}" >
+                <div class="field-title">
+                    <apex:outputText >{!$Label.IRS_Form_990}</apex:outputText>
+                </div>
+            </div>
+            <div class="grid-container" style="{!IF((csr.client__r.Update_Ongoing_Status__c == false), 'display:block', 'display:none')}">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText >{!$Label.IRS_Form_990_A}</apex:outputText>
+                    </div>
+                    <div class="input-field files">
+                        <apex:inputfile value="{!myfile.body}" filename="{!myfile.Name}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/> <br/>
+                        <apex:inputfile value="{!myfile13.body}" filename="{!myfile13.Name}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/> <br/>
+                        <apex:inputfile value="{!myfile14.body}" filename="{!myfile14.Name}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/> <br/>
+                        <apex:inputfile value="{!myfile15.body}" filename="{!myfile15.Name}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/> <br/>
+                        <apex:inputfile value="{!myfile16.body}" filename="{!myfile16.Name}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/> <br/>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container" style="{!IF((csr.client__r.Update_Ongoing_Status__c == false), 'display:block', 'display:none')}">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText >{!$Label.IRS_Form_990_B}</apex:outputText>
+                    </div>
+                    <div class="input-field files">
+                        <apex:inputfile value="{!myfile1.body}" filename="{!myfile1.Name}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/><br/>
+                        <apex:inputfile value="{!myfile18.body}" filename="{!myfile18.Name}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/> <br/>
+                        <apex:inputfile value="{!myfile19.body}" filename="{!myfile19.Name}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/> <br/>
+                        <apex:inputfile value="{!myfile20.body}" filename="{!myfile20.Name}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/> <br/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container" style="{!IF((csr.client__r.Update_Ongoing_Status__c == false), 'display:block', 'display:none')}">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText >{!$Label.Audited_financial_statements}</apex:outputText>
+                    </div>
+                    <div class="input-field files">
+                        <apex:inputfile value="{!myfile2.body}" filename="{!myfile2.Name}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="field-title">
+                    <apex:outputText >{!$Label.New_organizations}</apex:outputText>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <div class="field-title"><apex:outputLabel value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.Total_Revenue__c.label}"/></div>
+                    </div>
+                     <div class="input-field">
+                        <apex:inputField value="{!csr.Total_Revenue__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                         <apex:outputField value="{!csr.Total_Revenue__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                   
+                </div>
+            </div>
+            <div class="grid-container">
+             <div class="grid">
+                    <div class="input-field">
+                        <div class="field-title"><apex:outputLabel value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.Program_Service_Expenses__c.label}"/></div>
+                    </div>
+                     <div class="input-field">
+                        <apex:inputField value="{!csr.Program_Service_Expenses__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                         <apex:outputField value="{!csr.Program_Service_Expenses__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                    
+                </div>
+            </div>
+    
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputLabel value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.Management_General_Expenses__c.label}"/>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.Management_General_Expenses__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.Management_General_Expenses__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputLabel value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.Fundraising_Expenses__c.label}"/>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.Fundraising_Expenses__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.Fundraising_Expenses__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputLabel value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.Total_Expenses__c.label}"/>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.Total_Expenses__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.Total_Expenses__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText >{!$Label.IRS_application_forms}</apex:outputText><br/>
+                    </div>
+                    <div class="input-field">
+                        <apex:outputText >{!$Label.IRS_application_form_A}</apex:outputText><br/>
+                    </div>
+                </div>
+            </div> -->
+            <div class="grid-container" style="{!IF((csr.client__r.Update_Ongoing_Status__c == false), 'display:block', 'display:none')}">
+                <div class="field-title">
+                    <apex:outputText >{!$Label.IRS_application_forms}</apex:outputText>
+                </div>
+            </div>
+            <div class="grid-container" style="{!IF((csr.client__r.Update_Ongoing_Status__c == false), 'display:block', 'display:none')}">
+                <div class="field-title">
+                    <apex:outputText >{!$Label.IRS_application_form_A}</apex:outputText>
+                </div>
+            </div>
+            <div class="grid-container" style="{!IF((csr.client__r.Update_Ongoing_Status__c == false), 'display:block', 'display:none')}">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText >{!$Label.IRS_application_forms_A_1}</apex:outputText>
+                    </div>
+                    <div class="input-field files">
+                        <apex:inputfile value="{!myfile3.body}" filename="{!myfile3.Name}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container" style="{!IF((csr.client__r.Update_Ongoing_Status__c == false), 'display:block', 'display:none')}">
+                <div class="center">
+                    <apex:outputText >{!$Label.OR}</apex:outputText>
+                </div>
+            </div>
+            <div class="grid-container" style="{!IF((csr.client__r.Update_Ongoing_Status__c == false), 'display:block', 'display:none')}">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText >{!$Label.IRS_application_forms_A_2}</apex:outputText>
+                    </div>
+                    <div class="input-field files">
+                        <apex:inputfile value="{!myfile4.body}" filename="{!myfile4.Name}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/><br/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container" style="{!IF((csr.client__r.Update_Ongoing_Status__c == false), 'display:block', 'display:none')}">
+                <div class="field-title">
+                    <apex:outputText >{!$Label.IRS_application_form_B}</apex:outputText>
+                </div>
+            </div>
+            <div class="grid-container" style="{!IF((csr.client__r.Update_Ongoing_Status__c == false), 'display:block', 'display:none')}">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText >{!$Label.IRS_application_form_B_1}</apex:outputText>
+                    </div>
+                    <div class="input-field files">
+                        <apex:inputfile value="{!myfile5.body}" filename="{!myfile5.Name}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/><br/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container" style="{!IF((csr.client__r.Update_Ongoing_Status__c == false), 'display:block', 'display:none')}">
+                <div class="center">
+                    <apex:outputText >{!$Label.OR}</apex:outputText>
+                </div>
+            </div>
+            <div class="grid-container" style="{!IF((csr.client__r.Update_Ongoing_Status__c == false), 'display:block', 'display:none')}">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText >{!$Label.IRS_application_form_B_2}</apex:outputText>
+                    </div>
+                    <div class="input-field files">
+                        <apex:inputfile value="{!myfile6.body}" filename="{!myfile6.Name}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid-container" style="{!IF((csr.client__r.Update_Ongoing_Status__c == false), 'display:block', 'display:none')}">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText >{!$Label.IRS_application_form_B_3}</apex:outputText>
+                    </div>
+                    <div class="input-field files">
+                        <apex:inputfile value="{!myfile21.body}" filename="{!myfile21.Name}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/><br/>
+                    </div>
+                </div>
+            </div>
+              <div class="grid-container" style="{!IF((csr.client__r.Update_Ongoing_Status__c == false), 'display:block', 'display:none')}">
+                <div class="field-title">
+                    <apex:outputText >{!$Label.Note_1}</apex:outputText>
+                </div>
+            </div>
+            <div class="grid-container" style="{!IF((csr.client__r.Update_Ongoing_Status__c == false), 'display:block', 'display:none')}">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText >{!$Label.IRS_determination_letter}</apex:outputText><br/>
+                    </div>
+                    <div class="input-field files">
+                        <apex:inputfile value="{!myfile7.body}" filename="{!myfile7.Name}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container" style="{!IF((csr.client__r.Update_Ongoing_Status__c == false), 'display:block', 'display:none')}">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText >{!$Label.Articles_of_Incorporation}</apex:outputText>
+                    </div> 
+                    <div class="input-field files">
+                        <apex:inputfile value="{!myfile8.body}" filename="{!myfile8.Name}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container" style="{!IF((csr.client__r.Update_Ongoing_Status__c == false), 'display:block', 'display:none')}">
+                <div class="grid">
+                    <div class="text-field">
+                        <!--apex:outputText value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.Bylaws__c.InlineHelpText}"></apex:outputText-->
+                        <apex:outputText >{!$Label.Bylaws}</apex:outputText>
+                    </div>
+                    <div class="input-field files">
+                        <!--apex:inputField value="{!csr.Bylaws__c}"/-->
+                        <apex:inputfile value="{!myfile17.body}" filename="{!myfile17.Name}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/> <br/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.Purpose__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.Purpose__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.Purpose__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.Programs__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.Programs__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.Programs__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.Use_of_Funds__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.Use_of_Funds__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.Use_of_Funds__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+        <div class="grid-container">
+                <div class="field-title head">
+                    <b><apex:outputText >{!$Label.FUNDRAISING_INFORMATION}</apex:outputText></b>
+                </div>
+            </div>
+    
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.Oversight_of_fundraisings__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.Oversight_of_fundraisings__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.Oversight_of_fundraisings__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="field-title">
+                    <apex:outputText >{!$Label.Fundraising_methods}</apex:outputText>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="field-title">
+                    <apex:outputText >{!$Label.Fundraising_methods_a}</apex:outputText>
+                </div>
+            </div>
+            <!-- <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText >{!$Label.Fundraising_methods}</apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:outputText >{!$Label.Fundraising_methods_a}</apex:outputText> 
+                    </div>
+                </div>
+            </div> -->
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.Employees_of_the_organization__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.Employees_of_the_organization__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.Employees_of_the_organization__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.Volunteers__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.Volunteers__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.Volunteers__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+        <div class="grid-container">
+                <div class="field-title">
+                    <apex:outputText >{!$Label.States_where_registered}</apex:outputText>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.X16_a_Currently_Registered__c.Label}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.X16_a_Currently_Registered__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.X16_a_Currently_Registered__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.X16_b_State_Violation_History__c.Label}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.X16_b_State_Violation_History__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.X16_b_State_Violation_History__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+    <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.X16_c_Formerly_Registered__c.Label}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.X16_c_Formerly_Registered__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.X16_c_Formerly_Registered__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+    <div class="grid-container">
+                <div class="field-title">
+                    <apex:outputText >{!$Label.Note_2}</apex:outputText>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.X17__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.X17__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.X17__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.California__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.California__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.California__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.Illinois__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.Illinois__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.Illinois__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.Massachusetts__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.Massachusetts__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.Massachusetts__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container" >
+                    <div class="text-field">
+                        <apex:outputText >{!$Label.Complience}</apex:outputText>
+                    </div>
+                
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.X21_a__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.X21_a__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.X21_a__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.X21_b__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.X21_b__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.X21_b__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.X21_c__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.X21_c__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.X21_c__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid-container" style="{!IF((csr.client__r.Update_Ongoing_Status__c == false), 'display:block', 'display:none')}">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText >{!$Label.Complience_File_Upload}</apex:outputText>
+                    </div>
+                    <div class="input-field files">
+                        <apex:inputfile value="{!myfile22.body}" filename="{!myfile22.Name}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/> <br/>
+                        <apex:inputfile value="{!myfile23.body}" filename="{!myfile23.Name}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/> <br/>
+                        <apex:inputfile value="{!myfile24.body}" filename="{!myfile24.Name}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/> <br/>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid-container">
+                <div class="field-title">
+                    <apex:outputText >{!$Label.Professional_fundraisers}</apex:outputText>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.PFR_List__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.PFR_List__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.PFR_List__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid-container" style="{!IF((csr.client__r.Update_Ongoing_Status__c == false), 'display:block', 'display:none')}">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText >{!$Label.PFR_Contracts}</apex:outputText>
+                    </div>
+                    <div class="input-field files">
+                        <apex:inputfile value="{!myfile11.body}" filename="{!myfile11.Name}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:inputfile value="{!myfile25.body}" filename="{!myfile25.Name}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:inputfile value="{!myfile26.body}" filename="{!myfile26.Name}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:inputfile value="{!myfile27.body}" filename="{!myfile27.Name}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:inputfile value="{!myfile28.body}" filename="{!myfile28.Name}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.X20_c_PFR_Gross_Receipts_Compensation__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.X20_c_PFR_Gross_Receipts_Compensation__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.X20_c_PFR_Gross_Receipts_Compensation__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.X20_d__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.X20_d__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.X20_d__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>          
+            
+            <div class="grid-container" style="{!IF((csr.client__r.Update_Ongoing_Status__c == false), 'display:block', 'display:none')}">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText >{!$Label.Contracts}</apex:outputText>
+                    </div>
+                    <div class="input-field files">
+                        <apex:inputfile value="{!myfile12.body}" filename="{!myfile12.Name}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                    </div>
+                </div>
+            </div> 
+            
+            <div class="grid-container">
+                <div class="field-title head">
+                    <apex:outputText >{!$Label.BOARD_AND_MANAGEMENT_INFORMATION}</apex:outputText>
+                </div>
+            </div>
+            <div class="grid-container">
+                
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.Board_of_Directors_Officers_Trustees__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.Board_of_Directors_Officers_Trustees__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.Board_of_Directors_Officers_Trustees__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.Board_meetings__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.Board_meetings__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.Board_meetings__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.Compensation_Information__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.Compensation_Information__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.Compensation_Information__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.Control_persons__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.Control_persons__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.Control_persons__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.X10_year_Employment_History__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.X10_year_Employment_History__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.X10_year_Employment_History__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputLabel value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.Company_Name__c.label}"/>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.Company_Name__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.Company_Name__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputLabel value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.Term_of_Employment__c.label}"/>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.Term_of_Employment__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.Term_of_Employment__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="field-title">
+                    <apex:outputText >{!$Label.Relationships}</apex:outputText>
+                </div>
+            </div>
+            <div class="grid-container">
+                
+                <div class="grid flex-box">
+                    <div class="text-field">
+                        <apex:outputLabel value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.X27_a__c.InlineHelpText}"/>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.X27_a__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.X27_a__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputLabel value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.X27_b__c.InlineHelpText}"/>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.X27_b__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.X27_b__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+    <div class="grid-container">
+                <div class="field-title">
+                    <apex:outputText >{!$Label.Note_3}</apex:outputText>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.Criminal_acts__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.Criminal_acts__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.Criminal_acts__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.Funds_Custody__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.Funds_Custody__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.Funds_Custody__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.Funds_Distribution__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.Funds_Distribution__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.Funds_Distribution__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.Signatory_authority__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.Signatory_authority__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.Signatory_authority__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.Financial_records_Custody__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.Financial_records_Custody__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.Financial_records_Custody__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.Budget_approval__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.Budget_approval__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.Budget_approval__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.Banks__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.Banks__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.Banks__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>                        
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.Accountant_Auditor__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.Accountant_Auditor__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.Accountant_Auditor__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="field-title head">
+                    <apex:outputText >{!$Label.OTHER_INFORMATION}</apex:outputText>
+                </div>
+            </div>
+            <div class="grid-container">
+                
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.Nonprofit_donors__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.Nonprofit_donors__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.Nonprofit_donors__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.Signatures__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.Signatures__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.Signatures__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.Registered_Agent__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.Registered_Agent__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.Registered_Agent__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.Separate_Corporate_Registrations__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.Separate_Corporate_Registrations__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.Separate_Corporate_Registrations__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                        
+                    </div>
+                </div>
+            </div>
+    <div class="grid-container">
+                <div class="field-title">
+                    <apex:outputText >{!$Label.Note_5}</apex:outputText>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="field-title head">
+                    <apex:outputText >{!$Label.RELIGIOUS_ORGANIZATIONS}</apex:outputText>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.Sources_of_support__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.Sources_of_support__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.Sources_of_support__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.Worship_services__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.Worship_services__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.Worship_services__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="field-title">
+                    <apex:outputText >{!$Label.Illinois}</apex:outputText>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.Illinois_E_3a__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.Illinois_E_3a__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.Illinois_E_3a__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.Illinois_E_3b__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.Illinois_E_3b__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.Illinois_E_3b__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.Illinois_E_3c__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.Illinois_E_3c__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.Illinois_E_3c__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.New_York__c.InlineHelpText}"></apex:outputText>   
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.New_York__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.New_York__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="field-title head">
+                    <apex:outputText >{!$Label.EDUCATIONAL_INSTITUTIONS_AND_AFFILIATES}</apex:outputText>
+                </div>
+            </div>
+            <div class="grid-container" style="{!IF((csr.client__r.Update_Ongoing_Status__c == false), 'display:block', 'display:none')}">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText >{!$Label.Accreditation}</apex:outputText>
+                    </div>
+                    <div class="input-field files">
+                        <apex:inputfile value="{!myfile9.body}" filename="{!myfile9.Name}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="field-title">
+                    <apex:outputText >{!$Label.Solicitation_restrictions}</apex:outputText>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.Maryland__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.Maryland__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.Maryland__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.New_York1__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.New_York1__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.New_York1__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.Ohio__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.Ohio__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.Ohio__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.Oklahoma__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.Oklahoma__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.Oklahoma__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.Oregon__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.Oregon__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.Oregon__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText value="{!$objectType.Charitable_Solicitation_Registration1__c.fields.South_Carolina__c.InlineHelpText}"></apex:outputText>
+                    </div>
+                    <div class="input-field">
+                        <apex:inputField value="{!csr.South_Carolina__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                        <apex:outputField value="{!csr.South_Carolina__c}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == true)}"/>
+                    </div>
+                </div>
+            </div>
+            
+           <div class="grid-container" style="{!IF((csr.client__r.Update_Ongoing_Status__c == false), 'display:block', 'display:none')}">
+                <div class="field-title head">
+                    <apex:outputText >{!$Label.HOSPITALS_OR_AFFILIATES}</apex:outputText>
+                </div>
+            </div>
+            
+            <div class="grid-container" style="{!IF((csr.client__r.Update_Ongoing_Status__c == false), 'display:block', 'display:none')}">
+                <div class="grid">
+                    <div class="text-field">
+                        <apex:outputText >{!$Label.HOSPITALS_OR_AFFILIATES_1}</apex:outputText>
+                    </div>
+                    <div class="input-field files">
+                        <apex:inputfile value="{!myfile10.body}" filename="{!myfile10.Name}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <!-- <div class="input-field">
+                <select multiple="multiple" ondblclick="MultiSelectPicklist.handleMSPSelect('j_id0:theForm1:pb2:j_id422'); " id="j_id0:theForm1:pb2:j_id422_unselected" title="27(a) Related Persons - Available" size="4" style="width: 925px;"><optgroup style="text-decoration:none;" label="Available"><option value="0">(1) any other officer, director, trustee or employee</option>
+                    <option value="1">(2) any officer, agent, or employee of any fundraising professional firm under contract to the organization</option>
+                    <option value="2">(3) any officer, agent, or employee of a supplier or vendor firm providing goods or services to the organization?</option>
+                    </optgroup>
+                </select>
+            
+                    <div class="multiSelectPicklistCell">
+                        <a href="javascript:MultiSelectPicklist.handleMSPSelect%28%27j_id0%3AtheForm1%3Apb2%3Aj_id422%27%29%3B" title="Add"></a>
+                        <a href="javascript:MultiSelectPicklist.handleMSPUnSelect%28%27j_id0%3AtheForm1%3Apb2%3Aj_id422%27%29%3B" title="Remove"></a>
+                    </div>
+            
+                            <select multiple="multiple" ondblclick="MultiSelectPicklist.handleMSPUnSelect('j_id0:theForm1:pb2:j_id422'); " id="j_id0:theForm1:pb2:j_id422_selected" title="27(a) Related Persons - Chosen" size="4" style="width: 925px;"><optgroup style="text-decoration:none;" label="Chosen"></optgroup></select>
+            
+            </div> -->
+            
+            
+            
+            
+            <div class="grid-container" align="center" draggable="false" id="ct2" >
+                <br/><br/>
+                <apex:commandButton action="{! cancel }"  value="Back" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/> 
+                <apex:commandbutton value="Save" action="{!Saveto}" rendered="{!(csr.client__r.Update_Ongoing_Status__c == false)}"/>
+               <!-- <apex:commandButton action="{! Saveto }" value="Save" rerender="showmsg"/>   -->
+            </div>
+            <div align="center" draggable="false" id="ct2" style="{!IF((csr.client__r.Update_Ongoing_Status__c == true), 'display:block', 'display:none')}">
+                <br/><br/>
+                <!--button type="button" onclick="window.print();">Print</button-->
+                <input id="printpagebutton" type="button" value="Print" onclick="printpage()"/>
+            </div>
+        </apex:pageBlock>
+    
+    </apex:form>
+    <script>
+    function printpage() {
+        //Get the print button and put it into a variable
+        var printButton = document.getElementById("printpagebutton");
+        //Set the print button visibility to 'hidden' 
+        printButton.style.visibility = 'hidden';
+        //Print the page content
+        window.print()
+        printButton.style.visibility = 'visible';
+    }
+    </script>
+</apex:page>

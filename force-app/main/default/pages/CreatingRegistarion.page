@@ -1,0 +1,133 @@
+<apex:page standardController="Program__c" extensions="CaretingRegistarionPageCont" lightningStylesheets="true" doctype="html-5.0">
+    <head>
+     <style type="text/css">
+        .italicText 
+        { 
+             font-size:15pt;
+            font-family:Raleway, sans-serif;
+            font-weight: bold;
+            color: Nero
+        }
+        span.italicText
+        { 
+            text-align: center;
+    font-family: 'Raleway';
+    font-weight: 600;
+         letter-spacing: 0.1em;
+        }
+         body .pbSubsection > .detailList:first-child, .slds-vf-scope .pbSubsection > .detailList:first-child 
+         {
+            <!--background-color:IVORY !important-->
+            background-color:#f6f6f6 !important;
+         }
+         body .pbBody, .slds-vf-scope .pbBody {
+    
+            background-color: #f6f6f6;
+            
+            padding-bottom: 30px;
+        }
+        .labelCol {
+            text-align: right;
+            width: auto !important;
+        }
+        body .bPageBlock .detailList .dataCol, body .bPageBlock .detailList .data2Col, .slds-vf-scope .bPageBlock .detailList .dataCol, .slds-vf-scope .bPageBlock .detailList .data2Col{
+            width: auto !important;
+        }
+        .labelCol > label {
+            margin-bottom: 10px;
+            padding-top: 3px;
+        }
+         body .pbSubsection, .slds-vf-scope .pbSubsection { 
+         background: #f6f6f6;
+        }
+        input.btn{
+            color: #fff !important;
+            padding: 7px 47px !important;
+            background: #3495b2 !important;
+            border-radius: 0px !important;
+            font-weight: 900 !important;
+            text-transform: uppercase;
+            vertical-align: baseline;
+        }
+        input.btn:hover {
+            background: #b09a51 !important;
+            transition: .3s all ease-in;
+        }
+       </style>
+    </head>
+   
+    <apex:form id="theForm1" style="border-style:solid;border-width:2px;
+                                    border-color:black;background-image:linear-gradient(to right, #ffffff , #ffffff);margin-left:0px"><!--;-->
+        
+        <apex:pageBlock id="pb2" >
+            <p align="center">
+            <apex:image id="theImage" value="{!$Resource.WCB}" width="150" /><br/><br/>
+            </p>
+            <apex:pageMessages id="showmsg"></apex:pageMessages>
+            <!--p style="margin-bottom:0;text-align:center;"><apex:outputText styleClass="italicText" value="Please select the states to create registration record(s): "></apex:outputText></p> <br/><br/-->
+            <p style="margin-bottom:0;text-align:center;"><apex:outputText styleClass="italicText" value="PLEASE SELECT THE STATES TO CREATE REGISTRATION RECORD(S): "></apex:outputText></p> <br/><br/>
+            <apex:pageBlockSection columns="5" collapsible="false" >
+                <apex:inputCheckbox id="cbTest1" label="Alabama" value="{!cbTest}" styleClass="checkboxtext"></apex:inputCheckbox>  
+                <apex:inputCheckbox id="cbTest2" label="Alaska" value="{!cbTest1}" style="" ></apex:inputCheckbox>   
+                <apex:inputCheckbox id="cbTest3" label="Arizona" value="{!cbTest2}" style="" ></apex:inputCheckbox>           
+                <apex:inputCheckbox id="cbTest4" label="Arkansas" value="{!cbTest3}" style="" ></apex:inputCheckbox>     
+                <apex:inputCheckbox id="cbTest5" label="California" value="{!cbTest4}" style="" ></apex:inputCheckbox> 
+                <apex:inputCheckbox id="cbTest9" label="Colorado" value="{!cbTest5}" style="" ></apex:inputCheckbox>   
+                <apex:inputCheckbox id="cbTest6" label="Connecticut" value="{!cbTest6}" style="" ></apex:inputCheckbox>           
+                <apex:inputCheckbox id="cbTest7" label="Delaware" value="{!cbTest7}" style="" ></apex:inputCheckbox>   
+                <apex:inputCheckbox id="cbTest50" label="District of Columbia" value="{!cbTest50}" style="" ></apex:inputCheckbox> 
+                <apex:inputCheckbox id="cbTest8" label="Florida" value="{!cbTest8}" style="" ></apex:inputCheckbox>
+                <apex:inputCheckbox label="Georgia" value="{!cbTest9}" style="" ></apex:inputCheckbox>   
+                <apex:inputCheckbox label="Hawaii" value="{!cbTest10}" style="" ></apex:inputCheckbox>           
+                <apex:inputCheckbox label="Idaho" value="{!cbTest11}" style="" ></apex:inputCheckbox>     
+                <apex:inputCheckbox label="Illinois" value="{!cbTest12}" style="" ></apex:inputCheckbox>
+                <apex:inputCheckbox label="Indiana" value="{!cbTest13}" style="" ></apex:inputCheckbox>   
+                <apex:inputCheckbox label="Iowa" value="{!cbTest14}" style="" ></apex:inputCheckbox>           
+                <apex:inputCheckbox label="Kansas" value="{!cbTest15}" style="" ></apex:inputCheckbox>     
+                <apex:inputCheckbox label="Kentucky" value="{!cbTest16}" style="" ></apex:inputCheckbox>
+                <apex:inputCheckbox label="Louisiana" value="{!cbTest17}" style="" ></apex:inputCheckbox>   
+                <apex:inputCheckbox label="Maine" value="{!cbTest18}" style="" ></apex:inputCheckbox>           
+                <apex:inputCheckbox label="Maryland" value="{!cbTest19}" style="" ></apex:inputCheckbox>     
+                <apex:inputCheckbox label="Massachusetts" value="{!cbTest20}" style="" ></apex:inputCheckbox>
+                <apex:inputCheckbox label="Michigan" value="{!cbTest21}" style="" ></apex:inputCheckbox>   
+                <apex:inputCheckbox label="Minnesota" value="{!cbTest22}" style="" ></apex:inputCheckbox>           
+                <apex:inputCheckbox label="Mississippi" value="{!cbTest23}" style="" ></apex:inputCheckbox>     
+                <apex:inputCheckbox label="Missouri" value="{!cbTest24}" style="" ></apex:inputCheckbox>
+                <apex:inputCheckbox label="Montana" value="{!cbTest25}" style="" ></apex:inputCheckbox>   
+                <apex:inputCheckbox label="Nebraska" value="{!cbTest26}" style="" ></apex:inputCheckbox>           
+                <apex:inputCheckbox label="Nevada" value="{!cbTest27}" style="" ></apex:inputCheckbox>     
+                <apex:inputCheckbox label="New Hampshire" value="{!cbTest28}" style="" ></apex:inputCheckbox>
+                <apex:inputCheckbox label="New Jersey" value="{!cbTest29}" style="" ></apex:inputCheckbox>
+                <apex:inputCheckbox label="New Mexico" value="{!cbTest30}" style="" ></apex:inputCheckbox>
+                <apex:inputCheckbox label="North Carolina" value="{!cbTest31}" style="" ></apex:inputCheckbox>
+                <apex:inputCheckbox label="North Dakota" value="{!cbTest32}" style="" ></apex:inputCheckbox>
+                <apex:inputCheckbox label="New York" value="{!cbTest49}" style="" ></apex:inputCheckbox>
+                <apex:inputCheckbox label="Ohio" value="{!cbTest33}" style="" ></apex:inputCheckbox>
+                <apex:inputCheckbox label="Oklahoma" value="{!cbTest34}" style="" ></apex:inputCheckbox>
+                <apex:inputCheckbox label="Oregon" value="{!cbTest35}" style="" ></apex:inputCheckbox> 
+                <apex:inputCheckbox label="South Carolina" value="{!cbTest36}" style="" ></apex:inputCheckbox>
+                <apex:inputCheckbox label="Rhode Island" value="{!cbTest37}" style="" ></apex:inputCheckbox>
+                <apex:inputCheckbox label="South Dakota" value="{!cbTest38}" style="" ></apex:inputCheckbox>
+                <apex:inputCheckbox label="Tennessee" value="{!cbTest39}" style="" ></apex:inputCheckbox>
+                <apex:inputCheckbox label="Pennsylvania" value="{!cbTest40}" style="" ></apex:inputCheckbox>
+                <apex:inputCheckbox label="Texas" value="{!cbTest41}" style="" ></apex:inputCheckbox>
+                <apex:inputCheckbox label="Utah" value="{!cbTest42}" style="" ></apex:inputCheckbox>
+                <apex:inputCheckbox label="Vermont" value="{!cbTest43}" style="" ></apex:inputCheckbox>
+                <apex:inputCheckbox label="Virginia" value="{!cbTest44}" style="" ></apex:inputCheckbox>
+                <apex:inputCheckbox label="Washington" value="{!cbTest45}" style="" ></apex:inputCheckbox>
+                <apex:inputCheckbox label="West Virginia" value="{!cbTest46}" style="" ></apex:inputCheckbox>
+                <apex:inputCheckbox label="Wisconsin" value="{!cbTest47}" style="" ></apex:inputCheckbox>
+                <apex:inputCheckbox label="Wyoming" value="{!cbTest48}" style="" ></apex:inputCheckbox>
+                
+            </apex:pageBlockSection>
+            
+            <div align="center" draggable="false" id="ct2">
+                <br/><br/>
+                <apex:commandButton action="{! cancel }"  value="Back"/> 
+                <apex:commandButton action="{! saveRecord }" value="Submit" rerender="showmsg"/>  
+            </div>
+            
+        </apex:pageBlock>
+        
+    </apex:form>
+</apex:page>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X6_Total_Gross_Dollar_Value_of_Program__c</fullName>
+    <externalId>false</externalId>
+    <formula>Program__r.X8b_Less_direct_expense_from_fundraisin__c + Program__r.X9b_Less_direct_expense__c + Program__r.X10b_Less_Cost_of_goods_sold__c + Program__r.X25_A_Total_Expenses__c</formula>
+    <inlineHelpText>6. Total Gross Dollar Value of Program Services, Admin &amp; FR</inlineHelpText>
+    <label>6. Total Gross Dollar Value of Program</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

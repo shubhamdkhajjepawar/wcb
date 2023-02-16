@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Illinois_E_3c__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>c. For each of the three highest paid employees in the last fiscal year, their name, title, and amount paid.</inlineHelpText>
+    <label>Illinois(E(3c))</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

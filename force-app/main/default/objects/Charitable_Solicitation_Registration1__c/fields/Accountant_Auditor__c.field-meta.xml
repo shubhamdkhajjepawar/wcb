@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Accountant_Auditor__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>35.	Accountant/Auditor:  The name, address, and telephone number of each independent accountant or auditor for the organization.</inlineHelpText>
+    <label>Accountant/Auditor</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

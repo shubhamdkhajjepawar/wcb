@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <environments>Default</environments>
+    <formulas>
+        <name>dateformat</name>
+        <dataType>String</dataType>
+        <expression>TEXT({!$Record.Fiscal_Year_End_MONTH__c})+ &quot;/&quot; +TEXT({!$Record.Fiscal_Year_End_DAY__c})+ &quot;/&quot; +TEXT({!$Record.Fiscal_Year_End_YEAR__c})</expression>
+    </formulas>
+    <formulas>
+        <name>text</name>
+        <dataType>Date</dataType>
+        <expression>DATE(VALUE(TEXT({!$Record.Fiscal_Year_End_YEAR__c})),VALUE(TEXT({!$Record.Fiscal_Year_End_MONTH__c})),VALUE(TEXT({!$Record.Fiscal_Year_End_DAY__c})))</expression>
+    </formulas>
+    <interviewLabel>Update Fiscal year End {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Update Fiscal year End</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Fiscal_Year_End</name>
+        <label>Update Fiscal Year End</label>
+        <locationX>176</locationX>
+        <locationY>311</locationY>
+        <inputAssignments>
+            <field>Fiscal_Year_End__c</field>
+            <value>
+                <elementReference>text</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_Fiscal_Year_End</targetReference>
+        </connector>
+        <object>Account</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <environments>Default</environments>
+    <formulas>
+        <name>dateformula</name>
+        <dataType>Date</dataType>
+        <expression>{!$Flow.CurrentDate}</expression>
+    </formulas>
+    <formulas>
+        <name>datetext</name>
+        <dataType>String</dataType>
+        <expression>TEXT(MONTH({!$Flow.CurrentDate}))+ &quot;/&quot; + TEXT(DAY({!$Flow.CurrentDate}))+ &quot;/&quot; + TEXT(YEAR({!$Flow.CurrentDate}))</expression>
+    </formulas>
+    <interviewLabel>Update Cycle Status to created date {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Update Cycle Status to created date</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Cycle_Status_to_Created_date</name>
+        <label>Update Cycle Status to Created date</label>
+        <locationX>176</locationX>
+        <locationY>335</locationY>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>datetext</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_Cycle_Status_to_Created_date</targetReference>
+        </connector>
+        <object>Program__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

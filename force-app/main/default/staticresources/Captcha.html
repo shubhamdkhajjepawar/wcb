@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>reCAPTCHA demo: Simple page</title>
+     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  </head>
+  <body>
+    <form action="?" onsubmit="return validateForm()" method="POST">
+      <div class="g-recaptcha" data-sitekey="6LdFf0kgAAAAAKPznRhS9gXmAg8dwXaHguWF1YXL"></div>
+      <br/>
+      <!-- <input type="submit" value="Submit"> -->
+    </form>
+
+    <script type="text/javascript">
+      function resizeIframe(obj) {
+        obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+      }
+        function validateForm(){
+
+            if(grecaptcha.getResponse().length == 0){
+                alert('Please click the reCAPTCHA checkbox');
+                parent.postMessage("captcha failed", location.origin);
+                return false;
+            }
+            parent.postMessage("captcha success", location.origin);
+            return true;
+        }
+    </script>
+  </body>
+</html>

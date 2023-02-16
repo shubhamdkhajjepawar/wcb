@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Government_grants_membership_dues__c</fullName>
+    <externalId>false</externalId>
+    <formula>Program__r.X1b_Membership_Dues__c</formula>
+    <label>Government grants &amp; membership dues</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

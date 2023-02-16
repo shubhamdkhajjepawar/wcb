@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>R12_Aa__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>a.   If yes, please list the names of the organizations.</inlineHelpText>
+    <label>R12(Aa)</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

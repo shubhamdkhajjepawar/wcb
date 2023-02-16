@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X17_Other_changes_in_net_assets_or_fund__c</fullName>
+    <externalId>false</externalId>
+    <formula>Program__r.X9_Other_change_in_net_assets_or_fund_ba__c</formula>
+    <inlineHelpText>17. Other changes in net assets or fund balances:</inlineHelpText>
+    <label>17. Other changes in net assets or fund</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

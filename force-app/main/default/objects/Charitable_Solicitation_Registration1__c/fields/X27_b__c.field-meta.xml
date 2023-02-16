@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X27_b__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>b. Does the organization or any of its officers, directors, employees, or anyone holding a financial interest in the organization have a financial interest in, or serve as an officer, director, partner or employee of, a business described in (2) or (3) above?</inlineHelpText>
+    <label>27(b) Related Business</label>
+    <length>32768</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

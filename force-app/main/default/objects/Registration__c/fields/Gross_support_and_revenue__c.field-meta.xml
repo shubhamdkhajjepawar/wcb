@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Gross_support_and_revenue__c</fullName>
+    <externalId>false</externalId>
+    <formula>Program__r.X12_1_Total_Revenue__c - Program__r.X7d_Net_gain_or_loss__c</formula>
+    <label>Gross support and revenue</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

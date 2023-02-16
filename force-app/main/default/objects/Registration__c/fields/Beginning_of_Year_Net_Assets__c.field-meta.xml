@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Beginning_of_Year_Net_Assets__c</fullName>
+    <externalId>false</externalId>
+    <formula>Program__r.Net_assets_or_fund_balances__c</formula>
+    <label>Beginning of Year Net Assets</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X10_year_Employment_History__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>26. 10-year Employment History: The employment history (name of employer and dates of employment only) of all control persons named in the previous line item, for the past 10 years.</inlineHelpText>
+    <label>10-year Employment History</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

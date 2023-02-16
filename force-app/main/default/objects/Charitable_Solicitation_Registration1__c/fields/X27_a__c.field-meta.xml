@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X27_a__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>a. Are any of the organization’s officers, directors, trustees or employees related by blood, marriage, or adoption to</inlineHelpText>
+    <label>27(a) Related Persons</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>(1) any other officer, director, trustee or employee</fullName>
+                <default>false</default>
+                <label>(1) any other officer, director, trustee or employee</label>
+            </value>
+            <value>
+                <fullName>(2) any officer, agent, or employee of any fundraising professional firm under contract to the organization</fullName>
+                <default>false</default>
+                <label>(2) any officer, agent, or employee of any fundraising professional firm under contract to the organization</label>
+            </value>
+            <value>
+                <fullName>(3) any officer, agent, or employee of a supplier or vendor firm providing goods or services to the organization?</fullName>
+                <default>false</default>
+                <label>(3) any officer, agent, or employee of a supplier or vendor firm providing goods or services to the organization?</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

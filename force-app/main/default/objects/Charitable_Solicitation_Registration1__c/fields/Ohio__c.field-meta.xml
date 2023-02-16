@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ohio__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>c.  Ohio:  Does the institution solicit anyone in Ohio other than alumni, faculty, trustees, or the student membership and their families?</inlineHelpText>
+    <label>Ohio</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

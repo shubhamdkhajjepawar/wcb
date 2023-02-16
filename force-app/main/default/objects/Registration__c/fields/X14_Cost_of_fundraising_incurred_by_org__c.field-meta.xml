@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X14_Cost_of_fundraising_incurred_by_org__c</fullName>
+    <externalId>false</externalId>
+    <formula>Program__r.X25_D_Fundraising_Expenses_Total__c</formula>
+    <label>14. Cost of fundraising incurred by org</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

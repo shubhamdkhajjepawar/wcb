@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>J_Total_charitable_program_service_expe__c</fullName>
+    <externalId>false</externalId>
+    <formula>Program__r.X25_B_Program_Service_expenses__c - Program__r.Lines_1_2_3_Grants_and_similar_amt__c</formula>
+    <label>J) Total charitable program service expe</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

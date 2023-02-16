@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Form Filing</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Form Filings</value>
+    </caseValues>
+    <layouts>
+        <layout>Charitable Solicitation Registration Layout</layout>
+        <sections>
+            <label></label>
+            <section>BOARD AND MANAGEMENT INFORMATION</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>CORPORATE INFORMATION</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>E. EDUCATIONAL INSTITUTIONS AND AFFILIATES</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>FUNDRAISING INFORMATION</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>New Organisations</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>OTHER INFORMATION</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>RELIGIOUS ORGANIZATIONS</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Relationships</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>
